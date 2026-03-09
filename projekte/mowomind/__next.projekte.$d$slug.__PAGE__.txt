@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[28394,["/_next/static/chunks/4b935edd0cea1ee3.js","/_next/static/chunks/ef998cf67ccafe3e.js","/_next/static/chunks/59ccd5ed41369c14.js","/_next/static/chunks/51135c3efda7cbe2.js","/_next/static/chunks/7a00643740493144.js"],"ProjectClient"]
+3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/d2be314c3ece3fbe.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"buildId":"JhJW7PCQbCNeg77qG0Kma","rsc":["$","$1","c",{"children":[["$","$L2",null,{"slug":"mowomind","project":{"title":"Mowomind","category":"Corporate","tags":["Design","Development","Branding"],"description":"Moderne Corporate Website für ein innovatives Beratungsunternehmen im Bereich New Work und Organisationsentwicklung.","image":"https://cdn.prod.website-files.com/66b1e4356bd0881074b85ef5/66d84163f75bd71b890d33dd_Web-Desktop.jpg","year":"2023","client":"Mowomind","services":["Brand Identity","Web Design","Development"]}}],[["$","script","script-0",{"src":"/_next/static/chunks/51135c3efda7cbe2.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/7a00643740493144.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+5:null
