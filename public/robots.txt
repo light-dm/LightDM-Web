@@ -1,0 +1,23 @@
+# robots.txt für LIGHT Digital Marketing
+# https://light-dm.de
+
+User-agent: *
+Allow: /
+
+# Wichtige Seiten
+Allow: /leistungen
+Allow: /projekte
+Allow: /blog
+Allow: /kontakt
+Allow: /support
+Allow: /about
+
+# Statische Assets erlauben
+Allow: /_next/static/
+Allow: /images/
+
+# API-Routen blockieren (nicht relevant für statische Version)
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://light-dm.de/sitemap.xml

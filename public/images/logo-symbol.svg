@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700"/>
+      <stop offset="50%" style="stop-color:#F5C518"/>
+      <stop offset="100%" style="stop-color:#E6A800"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <g filter="url(#glow)">
+    <ellipse cx="100" cy="85" rx="50" ry="55" fill="url(#bulbGradient)" opacity="0.95"/>
+    
+    <ellipse cx="100" cy="85" rx="35" ry="40" fill="#FFE766" opacity="0.6"/>
+    <ellipse cx="100" cy="75" rx="20" ry="25" fill="#FFFACD" opacity="0.4"/>
+    
+    <rect x="80" y="135" width="40" height="8" rx="2" fill="url(#bulbGradient)"/>
+    <rect x="82" y="145" width="36" height="6" rx="2" fill="url(#bulbGradient)"/>
+    <rect x="84" y="153" width="32" height="6" rx="2" fill="url(#bulbGradient)"/>
+    
+    <path d="M90 161 L92 175 L100 180 L108 175 L110 161" fill="url(#bulbGradient)"/>
+    
+    <line x1="100" y1="25" x2="100" y2="10" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+    <line x1="145" y1="45" x2="155" y2="35" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+    <line x1="55" y1="45" x2="45" y2="35" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+    <line x1="160" y1="85" x2="175" y2="85" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+    <line x1="40" y1="85" x2="25" y2="85" stroke="#FFD700" stroke-width="3" stroke-linecap="round"/>
+  </g>
+</svg>
