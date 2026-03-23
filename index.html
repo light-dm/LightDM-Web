@@ -62,41 +62,69 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
 <script>(function(){
 new ZammadChat({chatId:1,show:false,buttonClass:'zammad-ldm-internal',inactiveClass:'is-inactive',cssAutoload:false,title:'<b>LightDM<\/b> Support',fontSize:'14px',flat:true});
 var btn=document.getElementById('ldm-zammad-btn');
-// ── Position-Fix: setProperty('important') beats Zammad inline styles ──
+var _opened=false;
+// ── Position + Auto-Hide Fix ──
 function fixPos(){
   var c=document.querySelector('.zammad-chat');
   if(!c)return;
   if(c.parentElement!==document.body)document.body.appendChild(c);
   var m=window.innerWidth<=480;
   c.style.setProperty('position','fixed','important');
-  c.style.setProperty('z-index','8999','important');
+  c.style.setProperty('z-index','50000','important');
   c.style.setProperty('bottom',m?'5rem':'5.5rem','important');
   c.style.setProperty('right',m?'1rem':'2rem','important');
   c.style.setProperty('left',m?'1rem':'auto','important');
   c.style.setProperty('top','auto','important');
   c.style.setProperty('width',m?'calc(100vw - 2rem)':'360px','important');
   c.style.setProperty('max-width','calc(100vw - 2rem)','important');
+  // Zammad ignores show:false → wir erzwingen geschlossen bis User klickt
+  if(!_opened)c.style.setProperty('display','none','important');
 }
 var _fp=setInterval(fixPos,200);setTimeout(function(){clearInterval(_fp);},6000);
 window.addEventListener('resize',fixPos);
+// Wenn Zammad's X-Button die Chat schließt → State sync
+var _cObs=setInterval(function(){
+  var c=document.querySelector('.zammad-chat');
+  if(!c)return;
+  clearInterval(_cObs);
+  new MutationObserver(function(){
+    if(c.style.display==='none'||window.getComputedStyle(c).display==='none')_opened=false;
+  }).observe(c,{attributes:true,attributeFilter:['style','class']});
+},300);
 // ── Mirror Zammad-Button-State → unseren Button ──
-function mirrorState(){
+var _ms=setInterval(function(){
   var zb=document.querySelector('.zammad-ldm-internal');
   if(!btn||!zb)return;
   btn.classList.toggle('ldm-offline',zb.classList.contains('zammad-chat-is-hidden'));
   btn.classList.toggle('is-inactive',zb.classList.contains('is-inactive'));
-}
-var _ms=setInterval(mirrorState,500);setTimeout(function(){clearInterval(_ms);},10000);
-// ── Klick: online→chat öffnen, offline→E-Mail ──
+},500);
+setTimeout(function(){clearInterval(_ms);},10000);
+// ── Klick: toggle chat oder offline→E-Mail ──
 if(btn){
   btn.addEventListener('click',function(){
     if(btn.classList.contains('is-inactive'))return;
-    var zb=document.querySelector('.zammad-ldm-internal');
-    if(!zb||zb.classList.contains('zammad-chat-is-hidden')){
+    var c=document.querySelector('.zammad-chat');
+    if(_opened){
+      // Schließen
+      _opened=false;
+      if(c)c.style.setProperty('display','none','important');
+      return;
+    }
+    // Offline-Check via agent-status
+    var st=document.querySelector('.zammad-chat-agent-status');
+    var offline=!st||st.classList.contains('zammad-chat-is-hidden');
+    if(offline){
       window.location.href='mailto:info@light-dm.de?subject=Support-Anfrage%20%E2%80%93%20LightDM%20Website';
       return;
     }
-    zb.click();
+    // Öffnen: force-show + Zammad-Header klicken (interner Toggle)
+    _opened=true;
+    if(c){
+      fixPos();
+      c.style.setProperty('display','block','important');
+      var h=c.querySelector('.js-chat-open');
+      if(h)h.click();
+    }
   });
 }
 })();</script>
