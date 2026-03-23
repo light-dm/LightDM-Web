@@ -75,27 +75,7 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
 })();
 </script>
 <script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
-<script>(function(){
-var _done=false;
-function initZ(){
-  if(_done)return;_done=true;
-  new ZammadChat({chatId:1});
-  var _el=null;
-  // Warte bis Zammad sein Element erstellt hat, dann ref speichern
-  var t=setInterval(function(){
-    var el=document.querySelector('.zammad-chat');
-    if(el){_el=el;clearInterval(t);}
-  },50);
-  setTimeout(function(){clearInterval(t);},3000);
-  // React entfernt das Element beim Reconcile → sofort wieder anhängen
-  new MutationObserver(function(){
-    if(_el&&!document.body.contains(_el)){document.body.appendChild(_el);}
-  }).observe(document.body,{childList:true});
-}
-// Nach window.load + 500ms → React-Hydration ist durch
-if(document.readyState==='complete'){setTimeout(initZ,500);}
-else{window.addEventListener('load',function(){setTimeout(initZ,500);});}
-})();</script>
+
 </body>
 
 

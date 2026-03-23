@@ -11,27 +11,26 @@ import os, re, glob
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # ── Button-CSS + Zammad script + ZammadChat init — direkt vor </body> ──
-ZAMMAD_BODY = """<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
+ZAMMAD_BODY = """<button id="ldm-chat-btn" aria-label="Chat öffnen"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></button>
+<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
 <script>(function(){
-var _done=false;
+var btn=document.getElementById('ldm-chat-btn');
+var _online=false;
 function initZ(){
-  if(_done)return;_done=true;
-  new ZammadChat({chatId:1});
-  var _el=null;
-  // Warte bis Zammad sein Element erstellt hat, dann ref speichern
-  var t=setInterval(function(){
-    var el=document.querySelector('.zammad-chat');
-    if(el){_el=el;clearInterval(t);}
-  },50);
-  setTimeout(function(){clearInterval(t);},3000);
-  // React entfernt das Element beim Reconcile → sofort wieder anhängen
-  new MutationObserver(function(){
-    if(_el&&!document.body.contains(_el)){document.body.appendChild(_el);}
-  }).observe(document.body,{childList:true});
+  new ZammadChat({chatId:1,show:false,cssAutoload:false});
 }
-// Nach window.load + 500ms → React-Hydration ist durch
+btn.addEventListener('click',function(){
+  var chatEl=document.querySelector('.zammad-chat');
+  if(chatEl&&document.body.contains(chatEl)){
+    var h=chatEl.querySelector('.zammad-chat-header');
+    if(h)h.click();
+  } else {
+    window.location.href='mailto:info@light-dm.de?subject=Support-Anfrage%20%E2%80%93%20LightDM';
+  }
+});
 if(document.readyState==='complete'){setTimeout(initZ,500);}
 else{window.addEventListener('load',function(){setTimeout(initZ,500);});}
+new MutationObserver(function(){if(btn&&!document.body.contains(btn))document.body.appendChild(btn);}).observe(document.body,{childList:true});
 })();</script>"""
 
 html_files = (
