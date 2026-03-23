@@ -60,6 +60,7 @@
 
 /* ── Zammad widget: dark theme overrides ── */
 .zammad-chat {
+  position: fixed !important;
   font-family: 'Space Grotesk', sans-serif !important;
   border-radius: 16px !important;
   overflow: hidden !important;
@@ -69,6 +70,7 @@
   right: 2rem !important;
   width: 360px !important;
   max-width: calc(100vw - 2rem) !important;
+  z-index: 8999 !important;
 }
 
 /* Header */
