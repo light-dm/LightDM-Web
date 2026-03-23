@@ -44,13 +44,15 @@
   animation: none;
 }
 
-/* Zammad hides button when chat offline — wir zeigen ihn trotzdem */
-/* (Zammad fügt zammad-chat-is-hidden hinzu wenn kein Agent online) */
+/* Offline-State (JS setzt .ldm-offline wenn kein Agent online) */
+#ldm-zammad-btn.ldm-offline {
+  opacity: 0.55;
+  animation: none;
+  cursor: default;
+}
+/* Zammad's own hidden class — niemals unseren Button verstecken */
 #ldm-zammad-btn.zammad-chat-is-hidden {
   display: flex !important;
-  opacity: 0.5;
-  animation: none;
-  cursor: not-allowed;
 }
 
 @keyframes ldmz-pulse {
