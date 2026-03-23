@@ -11,9 +11,24 @@
 </head>
 <body>
 <p>Diese Seite wurde verschoben. <a href="/ueber-uns">Hier klicken</a>.</p>
-<button id="ldm-zammad-btn" class="open-zammad-chat" aria-label="Chat öffnen"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></button>
+<button id="ldm-zammad-btn" aria-label="Chat öffnen"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg></button>
 <script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
-<script>(function(){new ZammadChat({chatId:1,show:false,buttonClass:'open-zammad-chat',inactiveClass:'is-inactive',cssAutoload:false,title:'<b>LightDM</b> Support',fontSize:'14px',flat:true});})();</script>
+<script>(function(){
+// Zammad init — buttonClass ist NUR die CSS-Klasse für Zammads eigenen Button
+new ZammadChat({chatId:1,show:false,buttonClass:'zammad-ldm-internal',inactiveClass:'is-inactive',cssAutoload:false,title:'<b>LightDM</b> Support',fontSize:'14px',flat:true});
+// Unser Button delegiert den Klick an Zammads internen Button
+var btn=document.getElementById('ldm-zammad-btn');
+if(btn){
+  btn.addEventListener('click',function(){
+    // Zammads eigener Button hat Klasse 'zammad-ldm-internal'
+    var zb=document.querySelector('.zammad-chat-button.zammad-ldm-internal,.zammad-ldm-internal');
+    if(zb){zb.click();return;}
+    // Fallback: erster .zammad-chat-button der nicht Send-Button ist
+    var fb=document.querySelector('.zammad-chat-button:not(.zammad-chat-send):not(.js-send)');
+    if(fb)fb.click();
+  });
+}
+})();</script>
 <script>(function(){
 // Re-attach button nach React-Navigation
 var btn=document.getElementById('ldm-zammad-btn');
@@ -21,10 +36,6 @@ if(!btn)return;
 new MutationObserver(function(){
   if(!document.body.contains(btn)){
     document.body.appendChild(btn);
-    // ZammadChat neu init wenn Button neu angehängt
-    if(window.ZammadChat){
-      try{new ZammadChat({chatId:1,show:false,buttonClass:'open-zammad-chat',inactiveClass:'is-inactive',cssAutoload:false,title:'<b>LightDM</b> Support',fontSize:'14px',flat:true});}catch(e){}
-    }
   }
 }).observe(document.body,{childList:true});
 })();</script>
