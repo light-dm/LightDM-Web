@@ -1,0 +1,166 @@
+/* LightDM Design v2 — Tech 2026 */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700&display=swap');
+
+/* ─── BASE TYPOGRAPHY ──────────────────────────────── */
+.ldm-v2,
+.ldm-v2 button,
+.ldm-v2 input,
+.ldm-v2 textarea,
+.ldm-v2 select {
+  font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif !important;
+}
+
+.ldm-v2 h1,
+.ldm-v2 h2,
+.ldm-v2 h3,
+.ldm-v2 h4,
+.ldm-v2 h5 {
+  font-family: 'Space Grotesk', sans-serif !important;
+  letter-spacing: -0.022em !important;
+}
+
+/* Monospace for badge labels */
+.ldm-v2 [class*="tracking-["] {
+  font-family: 'JetBrains Mono', monospace !important;
+}
+.ldm-badge {
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.63rem !important;
+  letter-spacing: 0.22em !important;
+}
+
+/* ─── SUBTLE GRID TEXTURE ──────────────────────────── */
+.ldm-v2::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 1;
+}
+
+/* ─── THREE.JS HERO CANVAS ─────────────────────────── */
+#ldm-hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── WERTE SECTION ────────────────────────────────── */
+.ldm-werte-grid {
+  gap: 0 !important;
+  border-top: 1px solid rgba(255,255,255,0.07) !important;
+}
+
+@media (min-width: 640px) {
+  .ldm-werte-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .ldm-werte-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+.ldm-werte-item {
+  padding: 2.5rem 0 !important;
+  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+}
+@media (min-width: 640px) {
+  .ldm-werte-item:nth-child(odd) {
+    padding-right: 2rem !important;
+    border-right: 1px solid rgba(255,255,255,0.07) !important;
+  }
+}
+@media (min-width: 1024px) {
+  .ldm-werte-item {
+    padding: 2.75rem 2rem 2.75rem 0 !important;
+    border-bottom: none !important;
+    border-right: none !important;
+  }
+  .ldm-werte-item + .ldm-werte-item {
+    padding-left: 2rem !important;
+    border-left: 1px solid rgba(255,255,255,0.07) !important;
+    padding-right: 0 !important;
+  }
+  .ldm-werte-item:nth-child(odd) {
+    padding-right: 0 !important;
+    border-right: none !important;
+  }
+}
+
+.ldm-werte-ghost { display: none !important; }
+.ldm-werte-icon  { display: none !important; }
+.ldm-werte-inner { padding-top: 0 !important; }
+
+.ldm-werte-num {
+  display: block;
+  font-family: 'JetBrains Mono', monospace !important;
+  font-size: 0.62rem !important;
+  font-weight: 500 !important;
+  color: #F5C518 !important;
+  letter-spacing: 0.28em !important;
+  margin-bottom: 1.75rem !important;
+  opacity: 0.85;
+}
+.ldm-werte-num::after {
+  content: '';
+  display: block;
+  width: 1.75rem;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(245,197,24,0.5), transparent);
+  margin-top: 0.875rem;
+}
+
+.ldm-werte-title {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 1.45rem !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.02em !important;
+  color: #fff !important;
+  margin-bottom: 0.875rem !important;
+  line-height: 1.2 !important;
+}
+
+.ldm-werte-desc {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 0.875rem !important;
+  line-height: 1.72 !important;
+  color: rgba(255,255,255,0.38) !important;
+  font-weight: 400 !important;
+}
+
+/* ─── HERO HEADLINE ────────────────────────────────── */
+.ldm-v2 h1[class*="font-bold"],
+.ldm-v2 h1[class*="font-black"] {
+  letter-spacing: -0.03em !important;
+}
+
+/* ─── TICKER FONT ──────────────────────────────────── */
+.ldm-v2 [class*="whitespace-nowrap"][class*="font-bold"],
+.ldm-v2 [class*="animate-"][class*="font-bold"] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  letter-spacing: 0.01em !important;
+}
+
+/* ─── CARD TITLES ──────────────────────────────────── */
+.ldm-v2 h3[class*="font-bold"] {
+  letter-spacing: -0.015em !important;
+}
+
+/* ─── CTA BUTTON ───────────────────────────────────── */
+.ldm-v2 button[class*="bg-gradient"],
+.ldm-v2 a[class*="bg-gradient"][class*="px-"] {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}

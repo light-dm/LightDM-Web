@@ -9,3 +9,4 @@ vite.config.ts.*
 *.tar.gz
 *.zip
 attached_assets
+.claude/
