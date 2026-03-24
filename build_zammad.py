@@ -3,13 +3,11 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
-ZAMMAD_BODY = """<button class="open-zammad-chat">Chat with us</button>
-<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
+ZAMMAD_BODY = """<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
 <script>(function() {
   new ZammadChat({
     fontSize: '12px',
-    chatId: 1,
-    show: false
+    chatId: 1
   });
 })();
 </script>"""
