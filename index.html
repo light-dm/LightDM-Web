@@ -57,8 +57,16 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
   document.addEventListener('DOMContentLoaded',function(){getH();lastY=window.scrollY;show(true);});
 })();
 </script>
+<button class="open-zammad-chat">Chat with us</button>
 <script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
-
+<script>(function() {
+  new ZammadChat({
+    fontSize: '12px',
+    chatId: 1,
+    show: false
+  });
+})();
+</script>
 </body>
 
 

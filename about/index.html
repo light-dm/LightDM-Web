@@ -11,8 +11,16 @@
 </head>
 <body>
 <p>Diese Seite wurde verschoben. <a href="/ueber-uns">Hier klicken</a>.</p>
+<button class="open-zammad-chat">Chat with us</button>
 <script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
-
+<script>(function() {
+  new ZammadChat({
+    fontSize: '12px',
+    chatId: 1,
+    show: false
+  });
+})();
+</script>
 </body>
 
 
