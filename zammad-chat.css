@@ -1,13 +1,9 @@
-/* =====================================================
-   LightDM — Zammad Chat: Gold Button + Dark Theme
-   ===================================================== */
-
-/* ── Floating Gold Button (immer sichtbar) ── */
+/* ── Floating Gold Button ── */
 #ldm-chat-btn {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  z-index: 9000;
+  z-index: 9999;
   width: 56px;
   height: 56px;
   border-radius: 50%;
@@ -17,140 +13,46 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(245,197,24,0.4);
+  box-shadow: 0 4px 20px rgba(245,197,24,0.45);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 #ldm-chat-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 28px rgba(245,197,24,0.55);
+  box-shadow: 0 6px 28px rgba(245,197,24,0.6);
 }
 #ldm-chat-btn svg {
   width: 24px;
   height: 24px;
-  color: #0d0d0c;
   stroke: #0d0d0c;
 }
 
-/* ── Zammads eigener Button verstecken ── */
-.zammad-chat-button:not(.zammad-chat-send):not(.js-send) {
-  display: none !important;
-}
-
-/* ── Zammad Chat Widget ── */
+/* ── Chat-Fenster ── */
 .zammad-chat {
   position: fixed !important;
   bottom: 5.5rem !important;
   right: 2rem !important;
   width: 340px !important;
   max-width: calc(100vw - 2rem) !important;
-  z-index: 8999 !important;
-  font-family: 'Space Grotesk', sans-serif !important;
+  z-index: 9998 !important;
   border-radius: 16px !important;
   overflow: hidden !important;
   box-shadow: 0 16px 48px rgba(0,0,0,0.6) !important;
-  border: 1px solid rgba(255,255,255,0.08) !important;
-}
-
-/* ── Header ── */
-.zammad-chat-header {
-  background: #111110 !important;
-  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
-  padding: 12px 16px !important;
-  cursor: pointer !important;
-}
-.zammad-chat-agent {
-  color: #fff !important;
-  font-weight: 700 !important;
-}
-.zammad-chat-agent-status {
-  color: #22c55e !important;
-  font-size: 0.65rem !important;
-}
-.zammad-chat-agent-status::before {
-  background: #22c55e !important;
-}
-
-/* ── Body ── */
-.zammad-chat-body {
-  background: #0d0d0c !important;
-  padding: 12px 16px !important;
-}
-.zammad-chat-welcome {
-  background: #0d0d0c !important;
-  color: rgba(255,255,255,0.7) !important;
   font-family: 'Space Grotesk', sans-serif !important;
 }
-.zammad-chat-headline {
-  color: #fff !important;
-  font-weight: 600 !important;
-}
 
-/* ── Messages ── */
-.zammad-chat-message {
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-size: 0.85rem !important;
-  line-height: 1.55 !important;
-}
-.zammad-chat-message--agent .zammad-chat-message-body {
-  background: rgba(255,255,255,0.07) !important;
-  color: rgba(255,255,255,0.85) !important;
-  border-radius: 12px 12px 12px 4px !important;
-}
-.zammad-chat-message--customer .zammad-chat-message-body {
-  background: linear-gradient(135deg, #F5C518, #E6A800) !important;
-  color: #0d0d0c !important;
-  font-weight: 600 !important;
-  border-radius: 12px 12px 4px 12px !important;
-}
-
-/* ── Input ── */
-.zammad-chat-controls {
-  background: #111110 !important;
-  border-top: 1px solid rgba(255,255,255,0.07) !important;
-  padding: 10px 14px !important;
-}
-.zammad-chat-input {
-  background: rgba(255,255,255,0.05) !important;
-  border: 1px solid rgba(255,255,255,0.1) !important;
-  border-radius: 10px !important;
-  color: #fff !important;
-  font-family: 'Space Grotesk', sans-serif !important;
-  font-size: 0.85rem !important;
-}
-.zammad-chat-input:focus {
-  border-color: rgba(245,197,24,0.4) !important;
-  outline: none !important;
-}
-.zammad-chat-input::placeholder {
-  color: rgba(255,255,255,0.25) !important;
-}
-
-/* ── Send Button ── */
-.zammad-chat-button.zammad-chat-send,
-.js-send {
-  background: linear-gradient(135deg, #F5C518, #E6A800) !important;
-  color: #0d0d0c !important;
-  border: none !important;
-  border-radius: 10px !important;
-  font-weight: 700 !important;
-}
-
-/* ── Scrollbar ── */
-.zammad-chat-body::-webkit-scrollbar { width: 4px; }
-.zammad-chat-body::-webkit-scrollbar-track { background: transparent; }
-.zammad-chat-body::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
+/* ── Dark Theme ── */
+.zammad-chat-header { background: #111110 !important; cursor: pointer !important; }
+.zammad-chat-agent  { color: #fff !important; font-weight: 700 !important; }
+.zammad-chat-welcome, .zammad-chat-body { background: #0d0d0c !important; color: rgba(255,255,255,0.75) !important; }
+.zammad-chat-controls { background: #111110 !important; border-top: 1px solid rgba(255,255,255,0.07) !important; }
+.zammad-chat-input { background: rgba(255,255,255,0.05) !important; border: 1px solid rgba(255,255,255,0.1) !important; border-radius: 10px !important; color: #fff !important; }
+.zammad-chat-input:focus { border-color: rgba(245,197,24,0.4) !important; outline: none !important; }
+.zammad-chat-message--agent .zammad-chat-message-body { background: rgba(255,255,255,0.07) !important; color: rgba(255,255,255,0.85) !important; border-radius: 12px 12px 12px 4px !important; }
+.zammad-chat-message--customer .zammad-chat-message-body { background: linear-gradient(135deg,#F5C518,#E6A800) !important; color: #0d0d0c !important; font-weight: 600 !important; border-radius: 12px 12px 4px 12px !important; }
+.zammad-chat-button.zammad-chat-send { background: linear-gradient(135deg,#F5C518,#E6A800) !important; color: #0d0d0c !important; border: none !important; border-radius: 10px !important; font-weight: 700 !important; }
 
 /* ── Mobile ── */
 @media (max-width: 480px) {
-  #ldm-chat-btn {
-    bottom: 1.25rem;
-    right: 1.25rem;
-  }
-  .zammad-chat {
-    right: 1rem !important;
-    left: 1rem !important;
-    width: auto !important;
-    bottom: 5rem !important;
-    max-width: calc(100vw - 2rem) !important;
-  }
+  #ldm-chat-btn { bottom: 1.25rem; right: 1.25rem; }
+  .zammad-chat { right: 1rem !important; left: 1rem !important; width: auto !important; bottom: 5rem !important; }
 }
