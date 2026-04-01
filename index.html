@@ -39,8 +39,14 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
 
 
 
+
 <script>(function(){
-  var _open=false,_pending=false;
+  var _pending=false;
+  function openChat(c){
+    c.classList.add('ldm-visible');
+    var h=c.querySelector('.js-chat-open');
+    if(h&&!c.classList.contains('zammad-chat-is-open'))setTimeout(function(){h.click();},50);
+  }
   function addBtn(){
     if(document.getElementById('ldm-chat-btn'))return;
     var b=document.createElement('button');
@@ -49,30 +55,25 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
     document.body.appendChild(b);
     b.addEventListener('click',function(){
       var c=document.querySelector('.zammad-chat');
-      if(!c){_pending=!_pending;return;}
-      // State direkt vom DOM ablesen statt eigenem Flag
-      if(c.classList.contains('ldm-visible')){
-        c.classList.remove('ldm-visible');
-        _open=false;
-      } else {
-        c.classList.add('ldm-visible');
-        _open=true;
-      }
+      if(!c){_pending=true;return;}
+      if(c.classList.contains('ldm-visible'))c.classList.remove('ldm-visible');
+      else openChat(c);
     });
   }
   addBtn();[200,500,1000].forEach(function(t){setTimeout(addBtn,t);});
-  // Zammad erst nach Seitenload laden (nicht-blockierend)
   function loadZammad(){
     var s=document.createElement('script');
     s.src='https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js';
     s.onload=function(){
-      new MutationObserver(function(m,o){
+      new ZammadChat({fontSize:'12px',chatId:1});
+      // Auf Chat-Element warten und dann pending anwenden
+      var poll=setInterval(function(){
         var c=document.querySelector('.zammad-chat');
         if(!c)return;
-        o.disconnect();
-        if(_pending){c.classList.add('ldm-visible');_open=true;_pending=false;}
-      }).observe(document.body,{childList:true,subtree:true});
-      new ZammadChat({fontSize:'12px',chatId:1});
+        clearInterval(poll);
+        if(_pending){openChat(c);_pending=false;}
+      },200);
+      setTimeout(function(){clearInterval(poll);},10000);
     };
     document.head.appendChild(s);
   }
