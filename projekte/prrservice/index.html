@@ -36,6 +36,7 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
 
 
 
+
 <script>(function(){
   var _open=false,_pending=false;
   function addBtn(){
@@ -47,9 +48,14 @@ header[data-show="1"]{transform:translateY(0) !important;-webkit-transform:trans
     b.addEventListener('click',function(){
       var c=document.querySelector('.zammad-chat');
       if(!c){_pending=!_pending;return;}
-      _open=!_open;
-      if(_open)c.classList.add('ldm-visible');
-      else c.classList.remove('ldm-visible');
+      // State direkt vom DOM ablesen statt eigenem Flag
+      if(c.classList.contains('ldm-visible')){
+        c.classList.remove('ldm-visible');
+        _open=false;
+      } else {
+        c.classList.add('ldm-visible');
+        _open=true;
+      }
     });
   }
   addBtn();[200,500,1000].forEach(function(t){setTimeout(addBtn,t);});
