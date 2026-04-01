@@ -3,16 +3,8 @@ import os, re, glob
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 
-ZAMMAD_BODY = """<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
-<script>(function(){
-  new ZammadChat({fontSize:'12px',chatId:1});
+ZAMMAD_BODY = """<script>(function(){
   var _open=false,_pending=false;
-  new MutationObserver(function(m,o){
-    var c=document.querySelector('.zammad-chat');
-    if(!c)return;
-    o.disconnect();
-    if(_pending){c.classList.add('ldm-visible');_open=true;_pending=false;}
-  }).observe(document.body,{childList:true,subtree:true});
   function addBtn(){
     if(document.getElementById('ldm-chat-btn'))return;
     var b=document.createElement('button');
@@ -27,9 +19,24 @@ ZAMMAD_BODY = """<script src="https://ticket.light-dm.de/assets/chat/chat-no-jqu
       else c.classList.remove('ldm-visible');
     });
   }
-  addBtn();
-  window.addEventListener('load',addBtn);
-  [200,500,1000,2000].forEach(function(t){setTimeout(addBtn,t);});
+  addBtn();[200,500,1000].forEach(function(t){setTimeout(addBtn,t);});
+  // Zammad erst nach Seitenload laden (nicht-blockierend)
+  function loadZammad(){
+    var s=document.createElement('script');
+    s.src='https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js';
+    s.onload=function(){
+      new MutationObserver(function(m,o){
+        var c=document.querySelector('.zammad-chat');
+        if(!c)return;
+        o.disconnect();
+        if(_pending){c.classList.add('ldm-visible');_open=true;_pending=false;}
+      }).observe(document.body,{childList:true,subtree:true});
+      new ZammadChat({fontSize:'12px',chatId:1});
+    };
+    document.head.appendChild(s);
+  }
+  if(document.readyState==='complete'){loadZammad();}
+  else{window.addEventListener('load',loadZammad);}
 })();
 </script>"""
 
