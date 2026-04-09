@@ -5,18 +5,23 @@
 <meta http-equiv="refresh" content="0;url=/ueber-uns">
 <link rel="canonical" href="https://light-dm.de/ueber-uns">
 <title>Weiterleitung...</title>
-<link rel="stylesheet" href="/design-v2.css">
+<link rel="stylesheet" href="/design-v2.css?v=3">
 <script src="/design-v2.js" defer></script>
-<link rel="stylesheet" href="/zammad-chat.css">
+<link rel="stylesheet" href="/zammad-chat.css?v=3">
+<link rel="preload" href="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js" as="script">
 </head>
 <body>
+<canvas id="hero-canvas" aria-hidden="true"></canvas>
 <p>Diese Seite wurde verschoben. <a href="/ueber-uns">Hier klicken</a>.</p>
 
 
 
 
 
+
+<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
 <script>(function(){
+  new ZammadChat({fontSize:'12px',chatId:1});
   var _pending=false;
   function openChat(c){
     c.classList.add('ldm-visible');
@@ -32,31 +37,21 @@
     b.addEventListener('click',function(){
       var c=document.querySelector('.zammad-chat');
       if(!c){_pending=true;return;}
-      if(c.classList.contains('ldm-visible'))c.classList.remove('ldm-visible');
-      else openChat(c);
+      if(c.classList.contains('ldm-visible')){c.classList.remove('ldm-visible');}
+      else{openChat(c);}
     });
   }
-  addBtn();[200,500,1000].forEach(function(t){setTimeout(addBtn,t);});
-  function loadZammad(){
-    var s=document.createElement('script');
-    s.src='https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js';
-    s.onload=function(){
-      new ZammadChat({fontSize:'12px',chatId:1});
-      // Auf Chat-Element warten und dann pending anwenden
-      var poll=setInterval(function(){
-        var c=document.querySelector('.zammad-chat');
-        if(!c)return;
-        clearInterval(poll);
-        if(_pending){openChat(c);_pending=false;}
-      },200);
-      setTimeout(function(){clearInterval(poll);},10000);
-    };
-    document.head.appendChild(s);
-  }
-  if(document.readyState==='complete'){loadZammad();}
-  else{window.addEventListener('load',loadZammad);}
+  var poll=setInterval(function(){
+    var c=document.querySelector('.zammad-chat');
+    if(!c)return;
+    clearInterval(poll);
+    addBtn();
+    if(_pending){openChat(c);_pending=false;}
+  },100);
+  setTimeout(function(){clearInterval(poll);addBtn();},10000);
 })();
 </script>
+<script src="/canvas.js"></script>
 </body>
 
 

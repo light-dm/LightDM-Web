@@ -1,0 +1,1217 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="preload" href="/_next/static/media/03fc1b4a8d284b5e-s.p.af4fcd24.woff2" as="font" crossorigin="" type="font/woff2"/>
+<link rel="preload" href="/_next/static/media/83afe278b6a6bb3c-s.p.3a6ba036.woff2" as="font" crossorigin="" type="font/woff2"/>
+<link rel="preload" as="image" href="/images/logo-full-white.png"/>
+<link rel="stylesheet" href="/_next/static/chunks/ec957d334dbd1a31.css" data-precedence="next"/>
+<link rel="stylesheet" href="/_next/static/chunks/99f6968b6f8d4f00.css" data-precedence="next"/>
+<title>KI-Prozessautomatisierung Hamburg | LIGHT DM</title>
+<meta name="description" content="KI-gestützte Prozessoptimierung für Ihr Unternehmen. Workflow-Automatisierung, Tool-Integration und individuelle KI-Lösungen von LIGHT DM."/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://light-dm.de/leistungen/ki-prozessoptimierung/"/>
+<meta property="og:title" content="KI-Prozessoptimierung | LIGHT DM"/>
+<meta property="og:url" content="https://light-dm.de/leistungen/ki-prozessoptimierung/"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/><link rel="icon" href="/icon.png" sizes="150x163" type="image/png"/>
+<link rel="stylesheet" href="/zammad-chat.css?v=3"/>
+<link rel="preload" href="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js" as="script"/>
+<style>
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: #0d0d0c;
+  color: rgba(255,255,255,0.82);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scroll progress bar ── */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; z-index: 100;
+  height: 2px; width: 0%;
+  background: linear-gradient(90deg, #F5C518, #FFD700, #E6A800);
+  transition: width 0.1s linear;
+  box-shadow: 0 0 8px rgba(245,197,24,0.5);
+}
+
+/* ── Grid texture ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.013) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.013) 1px, transparent 1px);
+  background-size: 72px 72px;
+  pointer-events: none; z-index: 0;
+}
+
+/* ── Layout ── */
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 2rem; position: relative; z-index: 1; }
+
+/* ── Section light effect ── */
+.lit-section {
+  position: relative;
+  overflow: hidden;
+}
+.lit-section::before {
+  content: '';
+  position: absolute;
+  top: -60%; left: 50%; transform: translateX(-50%);
+  width: 70%; height: 120%;
+  background: radial-gradient(ellipse, rgba(245,197,24,0.07) 0%, transparent 65%);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.lit-section.light-on::before { opacity: 1; }
+
+/* Light variant: section with brighter bg */
+.section-light {
+  background: rgba(255,255,255,0.025);
+  border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.section-warm {
+  background: linear-gradient(180deg, rgba(245,197,24,0.04) 0%, rgba(13,13,12,0) 100%);
+  border-top: 1px solid rgba(245,197,24,0.1);
+}
+
+
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 8rem 0 5rem;
+  position: relative; overflow: hidden;
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 780px; }
+
+.hero-breadcrumb {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-size: 0.62rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.28); margin-bottom: 2rem;
+  opacity: 0; animation: fadeUp 0.5s ease 0.2s forwards;
+}
+.hero-breadcrumb a { color: inherit; text-decoration: none; transition: color 0.2s; }
+.hero-breadcrumb a:hover { color: #F5C518; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 1rem; border-radius: 9999px;
+  border: 1px solid rgba(245,197,24,0.22);
+  background: rgba(245,197,24,0.06);
+  font-size: 0.62rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.2em;
+  color: #F5C518; margin-bottom: 1.75rem;
+  opacity: 0; animation: fadeUp 0.5s ease 0.3s forwards;
+}
+.hero-badge .pulse { width: 5px; height: 5px; border-radius: 50%; background: #F5C518; animation: blink 2.4s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+/* ── Word-by-word headline ── */
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 7.5rem);
+  font-weight: 800; line-height: 0.95; letter-spacing: -0.035em;
+  margin-bottom: 2rem;
+}
+.hero h1 .word {
+  display: inline-block;
+  opacity: 0; transform: translateY(60px) skewY(4deg);
+  animation: wordIn 0.7s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.hero h1 .word-white { color: #fff; }
+.hero h1 .word-gold {
+  background: linear-gradient(90deg, #FFD700 0%, #F5C518 40%, #E6A800 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero h1 .w1 { animation-delay: 0.35s; }
+.hero h1 .w2 { animation-delay: 0.52s; }
+@keyframes wordIn {
+  to { opacity:1; transform: translateY(0) skewY(0); }
+}
+
+/* ── Glowing line under h1 ── */
+.hero-line {
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, #F5C518, rgba(245,197,24,0.1));
+  margin-bottom: 1.75rem; border-radius: 9999px;
+  box-shadow: 0 0 12px rgba(245,197,24,0.4);
+  animation: lineIn 0.8s cubic-bezier(0.16,1,0.3,1) 0.9s forwards;
+}
+@keyframes lineIn { to { width: 120px; } }
+
+.hero-sub {
+  font-size: 1.05rem; line-height: 1.8; color: rgba(255,255,255,0.42);
+  max-width: 520px; margin-bottom: 2.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 0.9s forwards;
+}
+.hero-actions {
+  display: flex; flex-wrap: wrap; gap: 0.875rem;
+  opacity: 0; animation: fadeUp 0.7s ease 1.05s forwards;
+}
+.btn-gold {
+  padding: 0.875rem 2rem; border-radius: 9999px;
+  font-size: 0.75rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  background: linear-gradient(135deg, #F5C518, #E6A800);
+  color: #1a1918; text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 24px rgba(245,197,24,0.2);
+}
+.btn-gold:hover { transform: translateY(-2px) scale(1.02); box-shadow: 0 8px 32px rgba(245,197,24,0.4); }
+.btn-ghost {
+  padding: 0.875rem 2rem; border-radius: 9999px;
+  font-size: 0.75rem; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.07em;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.5); text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+.btn-ghost:hover { border-color: rgba(245,197,24,0.3); color: rgba(255,255,255,0.85); background: rgba(245,197,24,0.04); }
+
+/* ── Scroll indicator ── */
+.hero-scroll {
+  display: flex; align-items: center; gap: 0.875rem; margin-top: 4.5rem;
+  opacity: 0; animation: fadeUp 0.7s ease 1.3s forwards;
+}
+.hero-scroll span { font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.18); }
+.hero-scroll-line { width: 80px; height: 1px; background: linear-gradient(90deg, rgba(245,197,24,0.3), transparent); }
+.hero-scroll-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: rgba(245,197,24,0.4);
+  animation: scrollDot 2s ease-in-out infinite;
+}
+@keyframes scrollDot {
+  0%,100% { transform: translateY(0); opacity:0.4; }
+  50% { transform: translateY(4px); opacity:1; }
+}
+
+/* ── Divider ── */
+hr.rule { border: none; height: 1px; background: rgba(255,255,255,0.06); }
+
+/* ── Sections ── */
+.section { padding: 5.5rem 0; position: relative; z-index: 1; }
+.label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.28em; color: #F5C518; margin-bottom: 1rem; }
+.sec-title { font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.1; color: #fff; margin-bottom: 1rem; }
+.sec-desc { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.38); max-width: 520px; }
+
+/* ── Tech Stack ── */
+.tech-wrap { padding: 3rem 0; }
+.tech-intro { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.25em; color: rgba(255,255,255,0.22); margin-bottom: 1.125rem; }
+.tech-list { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.tech-pill {
+  padding: 0.4rem 0.9rem; border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.025);
+  font-size: 0.7rem; font-weight: 450; color: rgba(255,255,255,0.45);
+  transition: border-color 0.2s, color 0.2s, background 0.2s; cursor: default;
+}
+.tech-pill:hover { border-color: rgba(245,197,24,0.25); color: rgba(255,255,255,0.78); background: rgba(245,197,24,0.04); }
+
+/* ── Bento Grid ── */
+.bento { display: grid; grid-template-columns: repeat(12, 1fr); gap: 0.875rem; }
+.card {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.02);
+  padding: 1.875rem;
+  transition: border-color 0.25s, background 0.25s, transform 0.25s;
+  position: relative; overflow: hidden;
+}
+.card:hover { border-color: rgba(245,197,24,0.2); background: rgba(245,197,24,0.03); transform: translateY(-2px); }
+.c-8  { grid-column: span 8; }
+.c-4  { grid-column: span 4; }
+.c-6  { grid-column: span 6; }
+.c-4b { grid-column: span 4; }
+@media(max-width:1024px) { .c-8,.c-4,.c-6,.c-4b { grid-column: span 12; } }
+@media(min-width:640px) and (max-width:1023px) { .c-6 { grid-column: span 6; } .c-4b { grid-column: span 6; } }
+.card-icon {
+  width: 2.625rem; height: 2.625rem; border-radius: 0.75rem;
+  background: rgba(245,197,24,0.07); border: 1px solid rgba(245,197,24,0.15);
+  display: flex; align-items: center; justify-content: center;
+  color: #F5C518; margin-bottom: 1.25rem;
+}
+.card h3 { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.015em; color: #fff; margin-bottom: 0.55rem; }
+.c-8 h3 { font-size: 1.2rem; }
+.card p { font-size: 0.84rem; line-height: 1.72; color: rgba(255,255,255,0.38); }
+.card-tags { display: flex; flex-wrap: wrap; gap: 0.375rem; margin-top: 1.25rem; }
+.tag { padding: 0.2rem 0.65rem; border-radius: 9999px; background: rgba(245,197,24,0.07); border: 1px solid rgba(245,197,24,0.14); font-size: 0.62rem; font-weight: 500; color: rgba(245,197,24,0.75); letter-spacing: 0.04em; }
+.card.featured { border-color: rgba(245,197,24,0.14); background: linear-gradient(145deg, rgba(245,197,24,0.05), rgba(13,13,12,0.4)); }
+.card.featured .card-icon { background: rgba(245,197,24,0.12); border-color: rgba(245,197,24,0.25); }
+
+/* ── Placeholder ── */
+.img-placeholder {
+  border-radius: 1.25rem;
+  border: 1.5px dashed rgba(245,197,24,0.25);
+  background: rgba(245,197,24,0.02);
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 0.75rem; text-align: center;
+  padding: 2rem; position: relative; overflow: hidden;
+  cursor: default;
+}
+.img-placeholder .ph-icon { color: rgba(245,197,24,0.3); }
+.img-placeholder .ph-label {
+  font-size: 0.62rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.22em;
+  color: rgba(245,197,24,0.5);
+}
+.img-placeholder .ph-hint {
+  font-size: 0.72rem; color: rgba(255,255,255,0.2);
+  max-width: 200px; line-height: 1.55;
+}
+.img-placeholder .ph-tag {
+  position: absolute; top: 0.875rem; right: 0.875rem;
+  padding: 0.2rem 0.6rem; border-radius: 9999px;
+  background: rgba(245,197,24,0.1);
+  border: 1px solid rgba(245,197,24,0.2);
+  font-size: 0.55rem; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.15em;
+  color: rgba(245,197,24,0.6);
+}
+
+/* ── Split section (image + text) ── */
+.split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+@media(max-width:768px){ .split { grid-template-columns: 1fr; gap: 2.5rem; } }
+.split-visual {
+  border-radius: 1.5rem;
+  border: 1px solid rgba(245,197,24,0.12);
+  background: linear-gradient(135deg, rgba(245,197,24,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+}
+.split-visual .vis-symbol {
+  width: 55%; opacity: 0.18;
+  animation: float 6s ease-in-out infinite;
+}
+.split-visual .vis-glow {
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(245,197,24,0.1), transparent 60%);
+}
+.split-visual .vis-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(245,197,24,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245,197,24,0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.split-text .label { margin-bottom: 0.875rem; }
+.split-text h2 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.15; color: #fff; margin-bottom: 1rem; }
+.split-text p { font-size: 0.92rem; line-height: 1.8; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
+.split-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.split-list li {
+  display: flex; align-items: center; gap: 0.75rem;
+  font-size: 0.85rem; color: rgba(255,255,255,0.6);
+}
+.split-list li::before {
+  content: '';
+  width: 1.25rem; height: 1px;
+  background: linear-gradient(90deg, #F5C518, transparent);
+  flex-shrink: 0;
+}
+
+/* ── Process ── */
+.process { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid rgba(255,255,255,0.07); border-radius: 1.25rem; overflow: hidden; }
+@media(max-width:768px) { .process { grid-template-columns: 1fr 1fr; } }
+@media(max-width:480px) { .process { grid-template-columns: 1fr; } }
+.step { padding: 2.25rem 1.875rem; border-right: 1px solid rgba(255,255,255,0.07); transition: background 0.3s; position: relative; overflow: hidden; }
+.step:last-child { border-right: none; }
+/* Light beam on hover */
+.step::after {
+  content: '';
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 60%; height: 3px;
+  background: linear-gradient(90deg, transparent, #F5C518, transparent);
+  opacity: 0; transition: opacity 0.3s;
+}
+.step:hover { background: rgba(245,197,24,0.03); }
+.step:hover::after { opacity: 1; }
+@media(max-width:768px) {
+  .step:nth-child(2) { border-right: none; }
+  .step:nth-child(1),.step:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.07); }
+}
+@media(max-width:480px) { .step { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.07); } .step:last-child { border-bottom: none; } }
+.step-num { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: #F5C518; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.6rem; }
+.step-num::after { content:''; display:block; height:1px; width:1.25rem; background: linear-gradient(90deg, rgba(245,197,24,0.4), transparent); }
+.step h4 { font-size: 0.95rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; letter-spacing: -0.01em; }
+.step p { font-size: 0.78rem; line-height: 1.68; color: rgba(255,255,255,0.33); }
+
+/* ── Positioning ── */
+.position-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; border: 1px solid rgba(255,255,255,0.07); border-radius: 1.25rem; padding: 3rem; background: rgba(255,255,255,0.015); }
+@media(max-width:768px) { .position-block { grid-template-columns: 1fr; gap: 2.25rem; padding: 2rem; } }
+.pos-quote { font-size: clamp(1.25rem, 2.8vw, 1.875rem); font-weight: 800; letter-spacing: -0.025em; line-height: 1.3; color: #fff; }
+.pos-quote .accent { background: linear-gradient(90deg, #F5C518, #FFD700); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.pos-points { display: flex; flex-direction: column; gap: 0.75rem; }
+.pos-point { display: flex; align-items: flex-start; gap: 0.875rem; padding: 0.975rem 1.125rem; border-radius: 0.875rem; border: 1px solid rgba(255,255,255,0.05); background: rgba(255,255,255,0.01); transition: border-color 0.2s, background 0.2s; }
+.pos-point:hover { border-color: rgba(245,197,24,0.18); background: rgba(245,197,24,0.03); }
+.pos-arrow { width: 1.625rem; height: 1.625rem; flex-shrink: 0; border-radius: 50%; background: rgba(245,197,24,0.08); border: 1px solid rgba(245,197,24,0.18); display: flex; align-items: center; justify-content: center; color: #F5C518; font-size: 0.65rem; margin-top: 1px; }
+.pos-text strong { display:block; font-size:0.84rem; font-weight:600; color:rgba(255,255,255,0.82); margin-bottom:0.175rem; }
+.pos-text span { font-size:0.76rem; color:rgba(255,255,255,0.32); line-height:1.55; }
+
+/* ── CTA Button ── */
+.btn-animated {
+  position: relative; display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.75rem 1.75rem; border-radius: 9999px;
+  background: #111110; color: #fff;
+  font-size: 0.875rem; font-weight: 600;
+  font-family: 'Space Grotesk', sans-serif;
+  letter-spacing: 0.01em; white-space: nowrap;
+  text-decoration: none; cursor: pointer; border: none;
+  border: 1.5px solid #F5C518;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  z-index: 1;
+}
+.btn-animated:hover { background: #F5C518; color: #111; box-shadow: 0 0 20px rgba(245,197,24,0.25); }
+.btn-animated::before,
+.btn-animated::after {
+  content: '';
+  position: absolute;
+  left: -2px; top: -2px;
+  border-radius: 9999px;
+  background: linear-gradient(45deg,
+    #F5C518, #FFD700, #FFF8DC, #E6A800,
+    #F5C518, #FFD700, #FFF8DC, #E6A800,
+    #F5C518, #FFD700);
+  background-size: 400%;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: goldSpin 6s linear infinite;
+}
+.btn-animated::after {
+  filter: blur(14px);
+  opacity: 0.7;
+}
+@keyframes goldSpin {
+  0%   { background-position: 0 0; }
+  50%  { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+.btn-animated:hover { transform: translateY(-2px) scale(1.02); color: #fff; }
+
+/* ── CTA ── */
+.cta-block { border: 1px solid rgba(245,197,24,0.18); border-radius: 1.5rem; background: rgba(245,197,24,0.04); padding: 4rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+.cta-block::before { content:''; position:absolute; top:-40%; left:50%; transform:translateX(-50%); width:50%; height:100%; background: radial-gradient(ellipse, rgba(245,197,24,0.1), transparent 70%); pointer-events:none; }
+.cta-block h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); font-weight:800; letter-spacing:-0.025em; color:#fff; margin-bottom:0.875rem; position:relative; }
+.cta-block p { font-size:0.95rem; color:rgba(255,255,255,0.38); margin-bottom:2rem; max-width:440px; margin-left:auto; margin-right:auto; position:relative; }
+
+/* ── Stagger Testimonials ── */
+.stagger-testimonials {
+  position: relative;
+  width: 100%;
+  height: 560px;
+  overflow: hidden;
+}
+.st-stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.st-card {
+  position: absolute;
+  left: 50%; top: 50%;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03);
+  padding: 2rem;
+  border-radius: 1rem;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1),
+              box-shadow 0.5s ease,
+              background 0.5s ease,
+              border-color 0.5s ease;
+  user-select: none;
+}
+.st-card.center {
+  background: linear-gradient(135deg, #F5C518, #E6A800);
+  border-color: #F5C518;
+  box-shadow: 0 8px 0 4px rgba(245,197,24,0.2);
+  z-index: 10;
+}
+.st-card.side { z-index: 0; }
+.st-card:not(.center):hover { border-color: rgba(245,197,24,0.3); }
+/* Avatar */
+.st-avatar {
+  width: 48px; height: 56px;
+  border-radius: 2px;
+  object-fit: cover; object-position: top;
+  margin-bottom: 1.25rem;
+  box-shadow: 3px 3px 0px rgba(13,13,12,0.4);
+  background: rgba(255,255,255,0.1);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.st-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.st-avatar-init {
+  font-size: 1.25rem; font-weight: 700;
+  color: rgba(255,255,255,0.5);
+}
+.st-card.center .st-avatar-init { color: rgba(26,25,24,0.5); }
+.st-quote {
+  font-size: 0.95rem; font-weight: 500;
+  line-height: 1.6; color: rgba(255,255,255,0.82);
+  margin-bottom: 0;
+}
+.st-card.center .st-quote { color: #1a1918; }
+.st-by {
+  position: absolute;
+  bottom: 1.75rem; left: 2rem; right: 2rem;
+  font-size: 0.75rem; font-style: italic;
+  color: rgba(255,255,255,0.35);
+}
+.st-card.center .st-by { color: rgba(26,25,24,0.6); }
+/* Stars */
+.st-stars {
+  display: flex; gap: 2px; margin-bottom: 0.875rem;
+}
+.st-star { color: #F5C518; font-size: 0.8rem; }
+.st-card.center .st-star { color: #1a1918; }
+/* Nav buttons */
+.st-nav {
+  position: absolute;
+  bottom: 1.25rem; left: 50%;
+  transform: translateX(-50%);
+  display: flex; gap: 0.625rem;
+  z-index: 20;
+}
+.st-btn {
+  width: 3.25rem; height: 3.25rem;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: rgba(13,13,12,0.8);
+  backdrop-filter: blur(8px);
+  color: rgba(255,255,255,0.6);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.st-btn:hover {
+  background: #F5C518;
+  border-color: #F5C518;
+  color: #1a1918;
+}
+@media(max-width:640px) {
+  .stagger-testimonials { height: 480px; }
+}
+
+/* ── Footer ── */
+footer { border-top: 1px solid rgba(255,255,255,0.05); padding: 4rem 0 2.5rem; position: relative; z-index: 1; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
+@media(max-width:768px) { .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; } .footer-brand { grid-column: span 2; } }
+@media(max-width:480px) { .footer-grid { grid-template-columns: 1fr; } .footer-brand { grid-column: span 1; } }
+.footer-brand img { height: 1.875rem; margin-bottom: 1rem; }
+.footer-brand p { font-size: 0.8rem; line-height: 1.75; color: rgba(255,255,255,0.28); max-width: 270px; margin-bottom: 1.25rem; }
+.socials { display: flex; gap: 0.5rem; }
+.socials a { padding: 0.375rem 0.875rem; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.09); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.35); text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+.socials a:hover { color: #F5C518; border-color: rgba(245,197,24,0.2); }
+.footer-col h4 { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.6); margin-bottom: 1.25rem; }
+.footer-col nav { display: flex; flex-direction: column; gap: 0.75rem; }
+.footer-col nav a { font-size: 0.8rem; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+.footer-col nav a:hover { color: #F5C518; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.05); }
+.footer-bottom span, .footer-bottom a { font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.15em; color: rgba(255,255,255,0.18); text-decoration: none; transition: color 0.2s; }
+.footer-bottom a:hover { color: #F5C518; }
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+
+/* ── Animations ── */
+@keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
+.reveal { opacity:0; transform:translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.in { opacity:1; transform:none; }
+.d1 { transition-delay:0.08s; } .d2 { transition-delay:0.16s; } .d3 { transition-delay:0.24s; }
+</style>
+<link rel="stylesheet" href="/design-v2.css?v=3"/>
+</head>
+<body>
+<canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+<div id="scroll-progress"></div>
+
+<!-- ── HEADER ── -->
+<nav class="ldm-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="ldm-nav-inner">
+    <a href="/" class="ldm-nav-logo"><img src="/images/logo-full-white.png" alt="LIGHT DM" style="height:2rem;width:auto"/></a>
+    <ul class="ldm-nav-links">
+      <li class="ldm-leistungen-li">
+        <button class="ldm-nav-trigger" aria-expanded="false">Leistungen <span class="ldm-nav-arrow">&#9662;</span></button>
+      </li>
+      <li><a href="/projekte/">Projekte</a></li>
+      <li><a href="/ueber-uns/">Über uns</a></li>
+      <li><a href="/blog/">Blog</a></li>
+      <li><a href="/kontakt/">Kontakt</a></li>
+    </ul>
+    <a href="/kontakt/" class="btn-animated ldm-nav-cta" style="font-size:0.8rem;padding:0.65rem 1.4rem">Projekt starten</a>
+    <button class="ldm-hamburger" id="ldm-mob-btn" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="ldm-mega" id="ldm-mega">
+  <div class="ldm-mega-inner">
+    <div>
+      <span class="ldm-mega-label">IT &amp; Systeme</span>
+      <nav class="ldm-mega-links">
+        <a href="/leistungen/it-infrastruktur/" class="ldm-mega-link">IT-Infrastruktur <span>→</span></a>
+        <a href="/leistungen/it-security/" class="ldm-mega-link">IT-Security <span>→</span></a>
+        <a href="/leistungen/server-cloud/" class="ldm-mega-link">Server &amp; Cloud <span>→</span></a>
+        <a href="/leistungen/managed-support/" class="ldm-mega-link">Managed IT-Support <span>→</span></a>
+      </nav>
+    </div>
+    <div>
+      <span class="ldm-mega-label">KI &amp; Automatisierung</span>
+      <nav class="ldm-mega-links">
+        <a href="/leistungen/ki-prozessoptimierung/" class="ldm-mega-link">KI &amp; Automatisierung <span>→</span></a>
+        <a href="/leistungen/" class="ldm-mega-link">Alle Leistungen <span>→</span></a>
+      </nav>
+    </div>
+    <div>
+      <span class="ldm-mega-label">Digital</span>
+      <nav class="ldm-mega-links">
+        <a href="/leistungen/branding/" class="ldm-mega-link">Branding &amp; Corporate Design <span>→</span></a>
+        <a href="/leistungen/webdesign/" class="ldm-mega-link">Webdesign &amp; Entwicklung <span>→</span></a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="ldm-mobile-nav" id="ldm-mobile">
+  <div class="ldm-mobile-top">
+    <img src="/images/logo-full-white.png" alt="LIGHT DM" style="height:1.8rem;width:auto"/>
+    <button class="ldm-mobile-close" id="ldm-mob-close">✕</button>
+  </div>
+  <span class="ldm-mobile-label">Leistungen</span>
+  <div class="ldm-mobile-sub">
+    <a href="/leistungen/it-infrastruktur/">IT-Infrastruktur</a>
+    <a href="/leistungen/it-security/">IT-Security</a>
+    <a href="/leistungen/server-cloud/">Server &amp; Cloud</a>
+    <a href="/leistungen/managed-support/">Managed Support</a>
+    <a href="/leistungen/ki-prozessoptimierung/">KI &amp; Automatisierung</a>
+    <a href="/leistungen/branding/">Branding &amp; Design</a>
+    <a href="/leistungen/webdesign/">Webdesign</a>
+  </div>
+  <a href="/projekte/">Projekte</a>
+  <a href="/ueber-uns/">Über uns</a>
+  <a href="/blog/">Blog</a>
+  <a href="/kontakt/">Kontakt</a>
+  <div style="margin-top:2rem"><a href="/kontakt/" class="btn-animated">Projekt starten</a></div>
+</div>
+
+
+
+<!-- ── HERO ── -->
+<section class="hero">
+  
+
+  <div class="wrap hero-content">
+    <div class="hero-breadcrumb">
+      <a href="/leistungen/">Leistungen</a>
+      <span style="opacity:0.4">/</span>
+      <span>KI-Prozessoptimierung</span>
+    </div>
+    <div class="hero-badge">
+      <span class="pulse"></span>
+      KI &amp; Innovation
+    </div>
+    <h1>
+      <span class="word word-white w1">Smarter</span><br/>
+      <span class="word word-gold w2">arbeiten.</span>
+    </h1>
+    <div class="hero-line"></div>
+    <p class="hero-sub">
+      Wir analysieren Ihre Geschäftsprozesse und implementieren maßgeschneiderte KI-Lösungen. Keine Buzzwords, keine Theorie — nur echte, messbare Ergebnisse.
+    </p>
+    <div class="hero-actions">
+      <a href="/kontakt/" class="btn-animated">Kostenloses Erstgespräch</a>
+      <a href="#leistungen" class="btn-ghost">Leistungen ansehen</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-dot"></div>
+      <span>Scroll</span>
+      <div class="hero-scroll-line"></div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ── TECH STACK — leichte Section ── -->
+<div class="section-warm">
+  <div class="wrap tech-wrap">
+    <p class="tech-intro">Tools &amp; Technologien die wir einsetzen</p>
+    <div class="tech-list">
+      <span class="tech-pill">OpenAI / GPT-4o</span>
+      <span class="tech-pill">Microsoft Copilot</span>
+      <span class="tech-pill">n8n Automation</span>
+      <span class="tech-pill">Make (Integromat)</span>
+      <span class="tech-pill">Zapier</span>
+      <span class="tech-pill">Azure AI</span>
+      <span class="tech-pill">LangChain</span>
+      <span class="tech-pill">Python</span>
+      <span class="tech-pill">REST APIs</span>
+      <span class="tech-pill">Microsoft 365</span>
+      <span class="tech-pill">Notion AI</span>
+      <span class="tech-pill">HubSpot AI</span>
+    </div>
+  </div>
+</div>
+
+<hr class="rule"/>
+
+<!-- ── LEISTUNGEN — dark section ── -->
+<section class="section lit-section" id="leistungen" data-light>
+  <div class="wrap">
+    <div style="margin-bottom:3rem;">
+      <p class="label reveal">Was wir machen</p>
+      <h2 class="sec-title reveal d1">KI, die wirklich funktioniert</h2>
+      <p class="sec-desc reveal d2">Kein Konzern. Direkter Kontakt. Wir implementieren KI dort, wo sie echten Mehrwert schafft — nicht wo sie gut klingt.</p>
+    </div>
+    <div class="bento reveal d1">
+      <div class="card featured c-8">
+        <div class="card-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3>Workflow-Automatisierung</h3>
+        <p>Wir identifizieren manuelle, repetitive Prozesse und ersetzen sie durch intelligente Automatisierungen — von E-Mail-Verarbeitung und Datenpflege bis zur automatischen Rechnungsstellung.</p>
+        <div class="card-tags"><span class="tag">n8n</span><span class="tag">Make</span><span class="tag">Zapier</span><span class="tag">API-Integration</span></div>
+      </div>
+      <div class="card c-4" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div>
+          <h3>KI-Beratung &amp; Strategie</h3>
+          <p>Wo lohnt sich KI? Wo nicht? Ehrliche Einschätzung ohne Vendor-Lock-in.</p>
+        </div>
+        <div class="card-tags"><span class="tag">Audit</span><span class="tag">Roadmap</span></div>
+      </div>
+      <div class="card c-4b">
+        <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+        <h3>Tool-Integration</h3>
+        <p>Copilot, ChatGPT, Notion AI — nahtlos in Ihre bestehenden Systeme integriert.</p>
+        <div class="card-tags"><span class="tag">Copilot</span><span class="tag">GPT-4o</span></div>
+      </div>
+      <div class="card c-4b">
+        <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+        <h3>Prompt Engineering</h3>
+        <p>Präzise KI-Assistenten, die Ihr Team täglich entlasten — individuell auf Ihr Business.</p>
+        <div class="card-tags"><span class="tag">Custom GPTs</span><span class="tag">Assistenten</span></div>
+      </div>
+      <div class="card c-4b">
+        <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+        <h3>KI-Datenanalyse</h3>
+        <p>Geschäftsdaten auswerten, Muster erkennen, Reports generieren — automatisch.</p>
+        <div class="card-tags"><span class="tag">Python</span><span class="tag">Azure AI</span></div>
+      </div>
+      <div class="card c-6">
+        <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Team-Schulungen &amp; Workshops</h3>
+        <p>Wir befähigen Ihr Team, KI-Tools effektiv zu nutzen. Praxisnah, direkt auf Ihren Alltag zugeschnitten — kein generisches Online-Kurs-Material.</p>
+        <div class="card-tags"><span class="tag">Workshops</span><span class="tag">Remote</span><span class="tag">On-Site</span></div>
+      </div>
+      <div class="card featured c-6">
+        <div class="card-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M12 8v4l3 3"/></svg></div>
+        <h3>Individuelle KI-Entwicklung</h3>
+        <p>Wenn Standardlösungen nicht reichen — maßgeschneiderte KI-Anwendungen von der Konzeption bis zum laufenden Betrieb.</p>
+        <div class="card-tags"><span class="tag">LangChain</span><span class="tag">RAG-Systeme</span><span class="tag">Fine-Tuning</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ── SPLIT SECTION — hellere Section mit Logo-Visual ── -->
+<section class="section section-light lit-section" data-light>
+  <div class="wrap">
+    <div class="split">
+      <div class="img-placeholder reveal" style="aspect-ratio:4/3;">
+        <span class="ph-tag">Platzhalter</span>
+        <div class="ph-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <p class="ph-label">Screenshot / Foto</p>
+        <p class="ph-hint">z.B. n8n Workflow, Copilot-Chat oder eine echte Automatisierung</p>
+      </div>
+      <div class="split-text reveal d2">
+        <p class="label">Warum jetzt?</p>
+        <h2>KI ist kein Trend.<br/>Es ist die neue Basis.</h2>
+        <p>Unternehmen, die heute automatisieren, sparen morgen Ressourcen und gewinnen Wettbewerbsvorteile. Wir helfen Ihnen, den richtigen Einstieg zu finden — ohne Risiko, ohne Überinvestition.</p>
+        <ul class="split-list">
+          <li>Effizienzsteigerung durch Automatisierung repetitiver Aufgaben</li>
+          <li>Schnellere Entscheidungen durch KI-gestützte Datenanalyse</li>
+          <li>Skalierbarkeit ohne proportionales Personalwachstum</li>
+          <li>Niedrigschwelliger Einstieg — auch ohne IT-Abteilung</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ── PROZESS — dark section ── -->
+<section class="section lit-section" data-light>
+  <div class="wrap">
+    <div style="margin-bottom:3rem;">
+      <p class="label reveal">Unser Vorgehen</p>
+      <h2 class="sec-title reveal d1">Vom Gespräch zur<br/>laufenden Lösung</h2>
+    </div>
+    <div class="process reveal d2">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h4>Analyse</h4>
+        <p>Wir verstehen Ihr Business und Ihre Prozesse — und sagen ehrlich, wo KI wirklich hilft.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h4>Konzept</h4>
+        <p>Klarer Plan: welche Tools, Automatisierungen, welcher Aufwand — transparent und verständlich.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h4>Umsetzung</h4>
+        <p>Schnelle Implementierung, direkte Ansprechpartner — kein Ticketsystem, kein Warten.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h4>Support</h4>
+        <p>Wir bleiben dabei. Anpassungen, Erweiterungen, Schulungen — langfristige Partnerschaft.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ── TEAM / IMPRESSION ── -->
+<section class="section section-light lit-section" data-light>
+  <div class="wrap">
+    <div style="margin-bottom:2.5rem;">
+      <p class="label reveal">Menschen hinter LIGHT DM</p>
+      <h2 class="sec-title reveal d1">Persönlich. Direkt. Verlässlich.</h2>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem;" class="reveal d1">
+
+      <!-- Platzhalter 1: Team/Person -->
+      <div class="img-placeholder" style="aspect-ratio:3/4;">
+        <span class="ph-tag">Platzhalter</span>
+        <div class="ph-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <p class="ph-label">Team-Foto</p>
+        <p class="ph-hint">Portrait oder Team — zeigt wer hinter LIGHT DM steckt</p>
+      </div>
+
+      <!-- Platzhalter 2: Arbeitsumgebung -->
+      <div class="img-placeholder" style="aspect-ratio:3/4; margin-top:2rem;">
+        <span class="ph-tag">Platzhalter</span>
+        <div class="ph-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <p class="ph-label">Arbeitsumgebung</p>
+        <p class="ph-hint">Setup, Schreibtisch oder Büro — zeigt deine Arbeitsweise</p>
+      </div>
+
+      <!-- Platzhalter 3: In Action -->
+      <div class="img-placeholder" style="aspect-ratio:3/4;">
+        <span class="ph-tag">Platzhalter</span>
+        <div class="ph-icon">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <p class="ph-label">KI in Aktion</p>
+        <p class="ph-hint">Screenshot eines echten KI-Projekts oder Workflows</p>
+      </div>
+
+    </div>
+    <p style="font-size:0.7rem; color:rgba(255,255,255,0.18); text-align:center; margin-top:1.5rem; letter-spacing:0.1em;">
+      → Bilder bereitstellen und hier einsetzen für maximale Authentizität
+    </p>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ── POSITIONIERUNG — warm section ── -->
+<section class="section section-warm lit-section" data-light>
+  <div class="wrap">
+    <div class="position-block reveal">
+      <div>
+        <p class="label" style="margin-bottom:1.375rem;">Warum LIGHT DM</p>
+        <p class="pos-quote">
+          Kein Konzern.<br/>
+          <span class="accent">Direkter Kontakt.</span><br/>
+          Schnelle Entscheidungen.
+        </p>
+      </div>
+      <div class="pos-points">
+        <div class="pos-point">
+          <div class="pos-arrow">→</div>
+          <div class="pos-text">
+            <strong>Pragmatisch &amp; ehrlich</strong>
+            <span>Wir sagen auch, wenn KI keinen Sinn macht. Ihr Budget ist wertvoll.</span>
+          </div>
+        </div>
+        <div class="pos-point">
+          <div class="pos-arrow">→</div>
+          <div class="pos-text">
+            <strong>Digital + IT aus einer Hand</strong>
+            <span>KI-Prozesse, Website, IT-Infrastruktur — alles aufeinander abgestimmt.</span>
+          </div>
+        </div>
+        <div class="pos-point">
+          <div class="pos-arrow">→</div>
+          <div class="pos-text">
+            <strong>Flexibel &amp; fair</strong>
+            <span>Preise auf Anfrage, keine langen Vertragslaufzeiten, transparente Zusammenarbeit.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="section section-light" id="rezensionen">
+  <div class="wrap" style="text-align:center; margin-bottom:3rem;">
+    <p class="label reveal">Kundenstimmen</p>
+    <h2 class="sec-title reveal d1">Was Kunden sagen</h2>
+    <p class="sec-desc reveal d2" style="margin:0 auto;">5,0 &#9733;&#9733;&#9733;&#9733;&#9733; auf Google &nbsp;&middot;&nbsp; <a href="https://share.google/lmnxlDC8tAL9WpXwG" target="_blank" rel="noopener" style="color:rgba(245,197,24,0.6)">Alle Bewertungen ansehen &#8594;</a></p>
+  </div>
+  <div class="stagger-testimonials reveal" id="stagger-root">
+    <div class="st-stage" id="st-stage"></div>
+    <div class="st-nav">
+      <button class="st-btn" id="st-prev" aria-label="Vorherige Rezension">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="st-btn" id="st-next" aria-label="Nächste Rezension">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<hr class="rule"/>
+
+<!-- ── CTA ── -->
+<section class="section" style="padding-bottom:7rem;">
+  <div class="wrap">
+    <div class="cta-block reveal">
+      <h2>Bereit, smarter zu arbeiten?</h2>
+      <p>Kostenloses Erstgespräch — wir schauen gemeinsam, wo KI bei Ihnen echten Mehrwert schafft.</p>
+      <a href="/kontakt/" class="btn-animated">Jetzt Erstgespräch anfragen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="ldm-footer">
+  <div class="ldm-footer-grid">
+    <div>
+      <div class="ldm-footer-logo"><img src="/images/logo-full-white.png" alt="LIGHT DM" style="height:1.8rem;width:auto;filter:brightness(1)"/></div>
+      <p class="ldm-footer-tagline">IT-Infrastruktur, KI &amp; Automatisierung.<br>Individuell. Direkt. Verlässlich.</p>
+      <p class="ldm-footer-location">Buxtehude, Metropolregion Hamburg</p>
+    </div>
+    <div class="ldm-footer-col">
+      <h4>Leistungen</h4>
+      <a href="/leistungen/branding/">Branding &amp; Design</a>
+      <a href="/leistungen/webdesign/">Webdesign</a>
+      <a href="/leistungen/it-infrastruktur/">IT-Infrastruktur</a>
+      <a href="/leistungen/it-security/">IT-Security</a>
+      <a href="/leistungen/server-cloud/">Server &amp; Cloud</a>
+      <a href="/leistungen/managed-support/">Managed Support</a>
+      <a href="/leistungen/ki-prozessoptimierung/">KI &amp; Automatisierung</a>
+    </div>
+    <div class="ldm-footer-col">
+      <h4>Unternehmen</h4>
+      <a href="/ueber-uns/">Über uns</a>
+      <a href="/projekte/">Projekte</a>
+      <a href="/blog/">Blog</a>
+      <a href="/kontakt/">Kontakt</a>
+    </div>
+    <div class="ldm-footer-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@light-dm.de">info@light-dm.de</a>
+      <a href="/support/">Support-Chat</a>
+      <a href="/kontakt/">Beratungsgespräch</a>
+    </div>
+  </div>
+  <div class="ldm-footer-bottom">
+    <span class="ldm-footer-copy">© 2026 LIGHT DM</span>
+    <div class="ldm-footer-legal">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Stagger Testimonials ──
+(function(){
+  var DATA = [
+    { id:0, quote:"Ich habe den Webdesign-Service von Light-DM in Anspruch genommen und bin vollkommen zufrieden. Das Team war stets hilfsbereit und hat mich bei allen Fragen unterstützt. Das Endergebnis entspricht vollkommen meinen Vorstellungen — ich kann diesen Service nur wärmstens empfehlen.", by:"Olga Kurilenko", stars:5 },
+    { id:1, quote:"Light-DM hat einen super Service! Das Team ist sehr kompetent und meine Wünsche wurden einwandfrei erfüllt. Vielen Dank für die tolle Dienstleistung.", by:"Russ Kwabna", stars:5 }
+  ];
+
+  var list = DATA.slice();
+  var stage = document.getElementById('st-stage');
+  if(!stage) return;
+
+  var CARD_W = window.innerWidth >= 640 ? 340 : 270;
+  var CARD_H = window.innerWidth >= 640 ? 320 : 280;
+  var VISIBLE = 5; // cards shown (-2,-1,0,1,2)
+
+  function getInitials(by){ return by.split(' ').slice(0,2).map(function(w){return w[0];}).join('').toUpperCase(); }
+
+  function stars(n){
+    var s = '';
+    for(var i=0;i<n;i++) s += '<span class="st-star">★</span>';
+    return '<div class="st-stars">'+s+'</div>';
+  }
+
+  function render(){
+    stage.innerHTML = '';
+    var center = Math.floor(list.length / 2);
+    list.forEach(function(t, idx){
+      var pos = idx - center;
+      if(Math.abs(pos) > 2) return; // only show -2 to +2
+
+      var isCenter = pos === 0;
+      var card = document.createElement('div');
+      card.className = 'st-card ' + (isCenter ? 'center' : 'side');
+
+      var tx = (CARD_W / 1.5) * pos;
+      var ty = isCenter ? -65 : (pos % 2 !== 0 ? 15 : -15);
+      var rot = isCenter ? 0 : (pos % 2 !== 0 ? 2.5 : -2.5);
+      var opacity = Math.abs(pos) === 2 ? 0.5 : 1;
+
+      card.style.cssText = [
+        'width:'+CARD_W+'px',
+        'height:'+CARD_H+'px',
+        'transform:translate(-50%,-50%) translateX('+tx+'px) translateY('+ty+'px) rotate('+rot+'deg)',
+        'opacity:'+opacity
+      ].join(';');
+
+      card.innerHTML = [
+        '<div class="st-avatar"><span class="st-avatar-init">'+getInitials(t.by)+'</span></div>',
+        stars(t.stars),
+        '<p class="st-quote">&ldquo;'+t.quote+'&rdquo;</p>',
+        '<p class="st-by">— '+t.by+'</p>'
+      ].join('');
+
+      (function(p){ card.addEventListener('click', function(){ move(p); }); })(pos);
+      stage.appendChild(card);
+    });
+  }
+
+  function move(steps){
+    if(steps === 0) return;
+    if(steps > 0){
+      for(var i=0;i<steps;i++){ var item=list.shift(); list.push({...item, id:Math.random()}); }
+    } else {
+      for(var i=0;i>steps;i--){ var item=list.pop(); list.unshift({...item, id:Math.random()}); }
+    }
+    render();
+  }
+
+  document.getElementById('st-prev').addEventListener('click', function(){ move(-1); });
+  document.getElementById('st-next').addEventListener('click', function(){ move(1); });
+
+  window.addEventListener('resize', function(){
+    CARD_W = window.innerWidth >= 640 ? 340 : 270;
+    CARD_H = window.innerWidth >= 640 ? 320 : 280;
+    render();
+  });
+
+  render();
+})();
+
+// ── Neural Network Canvas ──
+(function(){
+  var canvas = document.getElementById('hero-canvas');
+  var ctx = canvas.getContext('2d');
+  var nodes = [], mouse = {x: -9999, y: -9999};
+  var W, H, RAF;
+
+  function resize(){
+    W = canvas.width  = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+
+  function Node(){
+    this.x  = Math.random() * W;
+    this.y  = Math.random() * H;
+    this.vx = (Math.random() - 0.5) * 0.35;
+    this.vy = (Math.random() - 0.5) * 0.35;
+    this.r  = Math.random() * 1.5 + 0.8;
+    this.opacity = Math.random() * 0.4 + 0.15;
+  }
+
+  function init(){
+    resize();
+    nodes = [];
+    var count = Math.floor((W * H) / 14000);
+    for(var i = 0; i < count; i++) nodes.push(new Node());
+  }
+
+  function draw(){
+    ctx.clearRect(0, 0, W, H);
+    var MAX_DIST = 160;
+    var MOUSE_DIST = 200;
+
+    // Move nodes
+    for(var i = 0; i < nodes.length; i++){
+      var n = nodes[i];
+      // Subtle mouse attraction
+      var dx = mouse.x - n.x, dy = mouse.y - n.y;
+      var d = Math.sqrt(dx*dx + dy*dy);
+      if(d < MOUSE_DIST){
+        var force = (MOUSE_DIST - d) / MOUSE_DIST * 0.015;
+        n.vx += dx * force; n.vy += dy * force;
+      }
+      // Damping
+      n.vx *= 0.98; n.vy *= 0.98;
+      n.x += n.vx; n.y += n.vy;
+      // Bounce
+      if(n.x < 0 || n.x > W) n.vx *= -1;
+      if(n.y < 0 || n.y > H) n.vy *= -1;
+      n.x = Math.max(0, Math.min(W, n.x));
+      n.y = Math.max(0, Math.min(H, n.y));
+    }
+
+    // Draw connections
+    for(var i = 0; i < nodes.length; i++){
+      for(var j = i+1; j < nodes.length; j++){
+        var a = nodes[i], b = nodes[j];
+        var dx = a.x - b.x, dy = a.y - b.y;
+        var dist = Math.sqrt(dx*dx + dy*dy);
+        if(dist < MAX_DIST){
+          var alpha = (1 - dist/MAX_DIST) * 0.18;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.strokeStyle = 'rgba(245,197,24,' + alpha + ')';
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+
+    // Draw nodes
+    for(var i = 0; i < nodes.length; i++){
+      var n = nodes[i];
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(245,197,24,' + n.opacity + ')';
+      ctx.fill();
+    }
+
+    RAF = requestAnimationFrame(draw);
+  }
+
+  canvas.addEventListener('mousemove', function(e){
+    var rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+  canvas.addEventListener('mouseleave', function(){ mouse.x = -9999; mouse.y = -9999; });
+
+  window.addEventListener('resize', function(){ if(RAF) cancelAnimationFrame(RAF); init(); draw(); });
+  init(); draw();
+})();
+
+// Scroll progress bar
+(function(){
+  var bar = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', function(){
+    var pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = Math.min(pct, 100) + '%';
+  }, {passive:true});
+})();
+
+// Header scroll
+
+
+// Scroll reveal + light-on effect
+(function(){
+  // Reveal
+  var reveals = document.querySelectorAll('.reveal');
+  var revealIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); revealIO.unobserve(e.target); }});
+  }, {threshold: 0.1});
+  reveals.forEach(function(el){ revealIO.observe(el); });
+
+  // Light-on sections
+  var litSections = document.querySelectorAll('.lit-section[data-light]');
+  var lightIO = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        e.target.classList.add('light-on');
+      } else {
+        e.target.classList.remove('light-on');
+      }
+    });
+  }, {threshold: 0.15});
+  litSections.forEach(function(el){ lightIO.observe(el); });
+})();
+// ── Header scroll ──
+(function(){
+  var nav = document.querySelector('.ldm-nav');
+  if(!nav) return;
+  window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 36); }, {passive:true});
+})();
+
+// ── Mega menu ──
+(function(){
+  var trigger = document.querySelector('.ldm-nav-trigger');
+  var mega = document.getElementById('ldm-mega');
+  var navLi = trigger ? trigger.closest('li') : null;
+  if(!trigger || !mega) return;
+  var t;
+  function open(){ clearTimeout(t); mega.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+  function close(){ t = setTimeout(function(){ mega.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }, 120); }
+  navLi.addEventListener('mouseenter', open);
+  navLi.addEventListener('mouseleave', close);
+  mega.addEventListener('mouseenter', function(){ clearTimeout(t); });
+  mega.addEventListener('mouseleave', close);
+  trigger.addEventListener('click', function(){ mega.classList.toggle('open'); });
+})();
+
+// ── Mobile nav ──
+(function(){
+  var btn = document.getElementById('ldm-mob-btn');
+  var mob = document.getElementById('ldm-mobile');
+  var cls = document.getElementById('ldm-mob-close');
+  if(!btn || !mob) return;
+  btn.addEventListener('click', function(){ mob.classList.add('open'); document.body.style.overflow='hidden'; });
+  if(cls) cls.addEventListener('click', function(){ mob.classList.remove('open'); document.body.style.overflow=''; });
+  mob.addEventListener('click', function(e){ if(e.target===mob){ mob.classList.remove('open'); document.body.style.overflow=''; } });
+})();
+</script>
+
+<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
+<script>(function(){
+  try { new ZammadChat({fontSize:'12px',chatId:1}); } catch(e) { return; }
+  var _pending=false;
+  function openChat(c){c.classList.add('ldm-visible');var h=c.querySelector('.js-chat-open');if(h&&!c.classList.contains('zammad-chat-is-open'))setTimeout(function(){h.click();},50);}
+  function addBtn(){
+    if(document.getElementById('ldm-chat-btn'))return;
+    var b=document.createElement('button');b.id='ldm-chat-btn';b.setAttribute('aria-label','Chat');
+    b.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>';
+    document.body.appendChild(b);
+    b.addEventListener('click',function(){var c=document.querySelector('.zammad-chat');if(!c){_pending=true;return;}if(c.classList.contains('ldm-visible')){c.classList.remove('ldm-visible');}else{openChat(c);}});
+  }
+  var poll=setInterval(function(){var c=document.querySelector('.zammad-chat');if(!c)return;clearInterval(poll);addBtn();if(_pending){openChat(c);_pending=false;}},100);
+  setTimeout(function(){clearInterval(poll);addBtn();},10000);
+})();
+</script>
+<script src="/canvas.js"></script>
+</body>
+</html>

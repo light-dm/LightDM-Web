@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IT-Sicherheit für kleine Unternehmen: Die 7 wichtigsten Maßnahmen | LIGHT DM</title>
+  <meta name="description" content="IT-Sicherheit für KMU: 7 konkrete Maßnahmen gegen Cyberangriffe, Datenverlust und Ransomware. Für Unternehmen mit 5–50 Mitarbeitern – verständlich erklärt.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://light-dm.de/blog/it-sicherheit-kleine-unternehmen/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/icon.png" type="image/png">
+  <meta property="og:title" content="IT-Sicherheit für kleine Unternehmen: Die 7 wichtigsten Maßnahmen | LIGHT DM">
+  <meta property="og:description" content="IT-Sicherheit für KMU: 7 konkrete Maßnahmen gegen Cyberangriffe, Datenverlust und Ransomware. Für Unternehmen mit 5–50 Mitarbeitern – verständlich erklärt.">
+  <meta property="og:url" content="https://light-dm.de/blog/it-sicherheit-kleine-unternehmen/">
+  <meta property="og:type" content="article">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/design-v2.css?v=3"/>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: #0d0d0c; color: #fff; font-family: 'Space Grotesk', sans-serif; overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .article-container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+    .page-hero { padding: 9rem 0 4rem; }
+    .page-hero-badge { font-family: 'JetBrains Mono', monospace; font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase; color: rgba(255,255,255,0.45); display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; }
+    .page-hero-badge::before { content: ''; width: 24px; height: 1px; background: #F5C518; display: block; }
+    .page-title { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 1.25rem; }
+    .page-title .gold { color: #F5C518; }
+    .page-sub { font-size: 1.05rem; color: rgba(255,255,255,0.55); max-width: 620px; line-height: 1.7; }
+    .gold { color: #F5C518; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.85rem 2rem; background: linear-gradient(135deg, #F5C518, #E6A800); color: #111; font-weight: 700; font-size: 0.875rem; border-radius: 9999px; transition: transform 0.2s, box-shadow 0.2s; }
+    .btn-primary:hover { transform: scale(1.03); box-shadow: 0 0 24px rgba(245,197,24,0.3); color: #111; }
+    .btn-animated { position: relative; display: inline-block; padding: 0.75rem 1.75rem; border-radius: 9999px; background: #111110; color: #fff; font-weight: 700; font-size: 0.85rem; font-family: 'Space Grotesk', sans-serif; z-index: 1; isolation: isolate; letter-spacing: -0.01em; transition: transform 0.2s; white-space: nowrap; text-decoration: none; }
+    .btn-animated:hover { transform: scale(1.02); color: #fff; }
+    .btn-animated::before { content: ''; position: absolute; left: -1.5px; top: -1.5px; border-radius: 9999px; background: linear-gradient(90deg, #F5C518, #E6A800, #FFD700, #F5C518); background-size: 300%; width: calc(100% + 3px); height: calc(100% + 3px); z-index: -1; animation: goldSpin 4s linear infinite; }
+    .btn-animated::after { content: ''; position: absolute; left: -1.5px; top: -1.5px; border-radius: 9999px; background: linear-gradient(90deg, #F5C518, #E6A800, #FFD700, #F5C518); background-size: 300%; width: calc(100% + 3px); height: calc(100% + 3px); z-index: -2; animation: goldSpin 4s linear infinite; filter: blur(6px); opacity: 0.35; }
+    @keyframes goldSpin { 0% { background-position: 0 50%; } 100% { background-position: 300% 50%; } }
+    .article-body { padding: 2rem 0 6rem; }
+    .article-body h2 { font-size: 1.4rem; font-weight: 700; color: #fff; margin: 2.5rem 0 1rem; letter-spacing: -0.02em; }
+    .article-body h3 { font-size: 1.05rem; font-weight: 600; color: rgba(255,255,255,0.9); margin: 1.5rem 0 0.65rem; }
+    .article-body p { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 1.25rem; }
+    .article-body ul, .article-body ol { padding-left: 1.5rem; margin-bottom: 1.25rem; }
+    .article-body li { font-size: 1rem; color: rgba(255,255,255,0.7); line-height: 1.8; margin-bottom: 0.4rem; }
+    .article-body strong { color: rgba(255,255,255,0.92); font-weight: 600; }
+    .article-divider { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 2.5rem 0; }
+    .article-intro { font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.85; margin-bottom: 2rem; }
+    .article-cta { background: linear-gradient(145deg, rgba(245,197,24,0.07), rgba(13,13,12,0.5)); border: 1px solid rgba(245,197,24,0.2); border-radius: 1.25rem; padding: 2.5rem; margin-top: 3rem; }
+    .article-cta h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.75rem; color: #fff; }
+    .article-cta p { color: rgba(255,255,255,0.6); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .article-back { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.4); font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2.5rem; transition: color 0.2s; }
+    .article-back:hover { color: #F5C518; }
+    .measure-block { border-left: 2px solid rgba(245,197,24,0.25); padding-left: 1.25rem; margin: 1.75rem 0; }
+    .risk-box { background: rgba(255,80,80,0.05); border: 1px solid rgba(255,80,80,0.15); border-radius: 0.75rem; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+    .risk-box .risk-label { font-family: 'JetBrains Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,100,100,0.8); margin-bottom: 0.5rem; }
+    .risk-box p { font-size: 0.9rem; color: rgba(255,255,255,0.65); line-height: 1.65; margin: 0; }
+  </style>
+  <link rel="stylesheet" href="/zammad-chat.css?v=3"/>
+</head>
+<body>
+<canvas id="hero-canvas" aria-hidden="true"></canvas>
+<nav class="ldm-nav" role="navigation" aria-label="Hauptnavigation">
+  <div class="ldm-nav-inner">
+    <a href="/" class="ldm-nav-logo"><img src="/images/logo-full-white.png" alt="LIGHT DM" style="height:2rem;width:auto"/></a>
+    <ul class="ldm-nav-links">
+      <li class="ldm-leistungen-li">
+        <button class="ldm-nav-trigger" aria-expanded="false">Leistungen <span class="ldm-nav-arrow">&#9662;</span></button>
+      </li>
+      <li><a href="/projekte/">Projekte</a></li>
+      <li><a href="/ueber-uns/">Über uns</a></li>
+      <li><a href="/blog/" class="current">Blog</a></li>
+      <li><a href="/kontakt/">Kontakt</a></li>
+    </ul>
+    <a href="/kontakt/" class="btn-animated ldm-nav-cta" style="font-size:0.8rem;padding:0.65rem 1.4rem">Projekt starten</a>
+    <button class="ldm-hamburger" id="ldm-mob-btn" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="ldm-mega" id="ldm-mega">
+  <div class="ldm-mega-inner">
+    <div>
+      <span class="ldm-mega-label">IT &amp; Systeme</span>
+      <nav class="ldm-mega-links">
+        <a href="/leistungen/it-infrastruktur/" class="ldm-mega-link">IT-Infrastruktur <span>→</span></a>
+        <a href="/leistungen/it-security/" class="ldm-mega-link">IT-Security <span>→</span></a>
+        <a href="/leistungen/server-cloud/" class="ldm-mega-link">Server &amp; Cloud <span>→</span></a>
+        <a href="/leistungen/managed-support/" class="ldm-mega-link">Managed IT-Support <span>→</span></a>
+      </nav>
+    </div>
+    <div>
+      <span class="ldm-mega-label">KI &amp; Automatisierung</span>
+      <nav class="ldm-mega-links">
+        <a href="/leistungen/ki-prozessoptimierung/" class="ldm-mega-link">KI &amp; Automatisierung <span>→</span></a>
+        <a href="/leistungen/" class="ldm-mega-link">Alle Leistungen <span>→</span></a>
+      </nav>
+    </div>
+    <div>
+      <span class="ldm-mega-label">Digital</span>
+      <nav class="ldm-mega-links">
+        <a href="/leistungen/branding/" class="ldm-mega-link">Branding &amp; Corporate Design <span>→</span></a>
+        <a href="/leistungen/webdesign/" class="ldm-mega-link">Webdesign &amp; Entwicklung <span>→</span></a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="ldm-mobile-nav" id="ldm-mobile">
+  <div class="ldm-mobile-top">
+    <img src="/images/logo-full-white.png" alt="LIGHT DM" style="height:1.8rem;width:auto"/>
+    <button class="ldm-mobile-close" id="ldm-mob-close">&#x2715;</button>
+  </div>
+  <span class="ldm-mobile-label">Leistungen</span>
+  <div class="ldm-mobile-sub">
+    <a href="/leistungen/it-infrastruktur/">IT-Infrastruktur</a>
+    <a href="/leistungen/it-security/">IT-Security</a>
+    <a href="/leistungen/server-cloud/">Server &amp; Cloud</a>
+    <a href="/leistungen/managed-support/">Managed Support</a>
+    <a href="/leistungen/ki-prozessoptimierung/">KI &amp; Automatisierung</a>
+    <a href="/leistungen/branding/">Branding &amp; Design</a>
+    <a href="/leistungen/webdesign/">Webdesign</a>
+  </div>
+  <a href="/projekte/">Projekte</a>
+  <a href="/ueber-uns/">Über uns</a>
+  <a href="/blog/">Blog</a>
+  <a href="/kontakt/">Kontakt</a>
+  <div style="margin-top:2rem"><a href="/kontakt/" class="btn-animated">Projekt starten</a></div>
+</div>
+
+<main style="padding-top:64px">
+  <section class="page-hero">
+    <div class="article-container">
+      <span class="page-hero-badge">IT-Security &middot; April 2026 &middot; 12 Min. Lesezeit</span>
+      <h1 class="page-title">IT-Sicherheit für kleine Unternehmen: <span class="gold">Die 7 wichtigsten Maßnahmen</span></h1>
+      <p class="page-sub">Ohne eigene IT-Abteilung sicher aufgestellt: Was Unternehmen mit 5–50 Mitarbeitern konkret tun können — ohne IT-Studium und ohne großes Budget.</p>
+    </div>
+  </section>
+
+  <div class="article-body">
+    <div class="article-container">
+
+      <p class="article-intro">Kleine Unternehmen gelten bei Cyberkriminellen als besonders lohnende Ziele — nicht weil sie viel Geld haben, sondern weil ihre IT-Sicherheit oft kaum vorhanden ist. Kein dedizierter IT-Verantwortlicher, keine klaren Prozesse, veraltete Systeme. Das BSI verzeichnet jedes Jahr mehr Angriffe auf den Mittelstand. Dieser Artikel zeigt Ihnen sieben Maßnahmen, die Sie konkret umsetzen können — ohne IT-Studium und ohne ein großes Budget.</p>
+
+      <h2>Warum IT-Sicherheit für KMU kein optionales Thema mehr ist</h2>
+
+      <p>Die verbreitete Annahme, Cyberkriminelle würden sich nur für Konzerne interessieren, ist gefährlich falsch. Tatsächlich sind kleine Unternehmen mit 5 bis 50 Mitarbeitern häufig das bevorzugte Ziel — automatisierte Angriffe machen keinen Unterschied zwischen einem Handwerksbetrieb in Buxtehude und einem DAX-Konzern in Frankfurt. Was einen Unterschied macht, ist die Vorbereitung.</p>
+
+      <p>Ransomware, Phishing und Datenpannen kosten kleine Unternehmen im Durchschnitt mehrere Zehntausend Euro — an direktem Schaden, Ausfallzeit und Reputationsverlust. Hinzu kommen mögliche DSGVO-Bußgelder bei unzureichend geschützten Kundendaten. Die gute Nachricht: Die Grundlagen sind kein Hexenwerk. Die folgenden sieben Maßnahmen decken den größten Teil Ihres Risikos ab.</p>
+
+      <div class="risk-box">
+        <div class="risk-label">Risiko ohne Maßnahmen</div>
+        <p>Ein Ransomware-Angriff legt ein mittelständisches Unternehmen im Schnitt 3 bis 21 Tage lahm. Die direkten Kosten liegen typischerweise zwischen 50.000 und 500.000 Euro — oft mehr als alle IT-Sicherheitsmaßnahmen der letzten zehn Jahre zusammen.</p>
+      </div>
+
+      <h2>1. Sichere Passwörter und ein Passwort-Manager</h2>
+
+      <p><strong>Was es ist:</strong> Ein Passwort-Manager ist eine Software, die für jeden Dienst ein einzigartiges, komplexes Passwort generiert und speichert. Ihr Team muss sich nur noch ein einziges Master-Passwort merken.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> Der mit Abstand häufigste Einstiegspunkt für Angreifer sind kompromittierte Zugangsdaten. "123456" oder das Geburtsdatum der Kinder reichen aus, um einem Angreifer innerhalb von Sekunden Zugang zu Ihren Systemen zu verschaffen.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Führen Sie einen Team-Passwort-Manager ein — Bitwarden (Open Source, günstig) oder 1Password sind bewährte Optionen. Definieren Sie eine Passwort-Richtlinie: mindestens 16 Zeichen, kein Passwort doppelt verwenden. Das ist an einem Nachmittag eingerichtet.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> Ein einziges geleaktes Passwort aus einem Datenbreach — zum Beispiel von einer alten Webseite — kann reichen, um Ihr E-Mail-Postfach, Ihr Cloud-Laufwerk und Ihre Buchhaltungssoftware zu kompromittieren. Das ist kein Worst-Case, das ist Alltag.</p>
+
+      <h2>2. Zwei-Faktor-Authentifizierung (2FA) überall aktivieren</h2>
+
+      <p><strong>Was es ist:</strong> Nach der Passworteingabe wird ein zweiter Code verlangt — zum Beispiel aus einer App wie Google Authenticator oder Microsoft Authenticator. Selbst wenn ein Angreifer Ihr Passwort kennt, kommt er ohne diesen Code nicht rein.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> 2FA ist eine der wirkungsvollsten Einzelmaßnahmen im Bereich IT-Security für KMU. Microsoft zufolge werden damit 99,9 Prozent aller automatisierten Angriffe auf Konten verhindert.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Aktivieren Sie 2FA mindestens für E-Mail, Microsoft 365 oder Google Workspace, Banking und alle Cloud-Dienste. Bei Microsoft 365 ist das in den Sicherheitseinstellungen des Admin-Centers in wenigen Klicks für das gesamte Team erledigt.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> Business E-Mail Compromise — Angreifer übernehmen die E-Mail eines Geschäftsführers und schicken gefälschte Überweisungsanfragen an die Buchhaltung. Allein in Deutschland entstehen dadurch jährlich Schäden in Millionenhöhe.</p>
+
+      <h2>3. Software und Systeme aktuell halten</h2>
+
+      <p><strong>Was es ist:</strong> Regelmäßige Updates für Betriebssysteme, Browser, Office-Anwendungen und alle weiteren Programme auf allen Geräten — Laptops, PCs, Server.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> Sicherheitslücken in veralteter Software sind der zweitbeliebteste Angriffsweg. Hersteller schließen bekannte Lücken durch Updates — wer diese nicht einspielt, hält die Hintertür für Angreifer offen.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Aktivieren Sie automatische Updates für Windows und macOS. Für Unternehmen mit mehreren Geräten empfiehlt sich ein Patch-Management-Tool oder ein MSP, der das zentral übernimmt. Windows 10 verliert im Oktober 2025 den Support — ein konkreter Handlungsbedarf für viele KMU.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> WannaCry — der bekannteste Ransomware-Angriff der Geschichte — nutzte eine Windows-Sicherheitslücke aus, für die Microsoft bereits einen Patch veröffentlicht hatte. Tausende Unternehmen, die das Update nicht eingespielt hatten, verloren ihre gesamten Daten.</p>
+
+      <h2>4. Regelmäßige Datensicherungen nach der 3-2-1-Regel</h2>
+
+      <p><strong>Was es ist:</strong> Die 3-2-1-Regel bedeutet: 3 Kopien Ihrer Daten, auf 2 verschiedenen Medientypen, davon 1 Kopie extern oder in der Cloud — getrennt vom laufenden System.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> Ein Backup ist die letzte Verteidigungslinie. Bei einem Ransomware-Angriff werden Ihre Daten verschlüsselt — wer kein sauberes Backup hat, zahlt das Lösegeld oder verliert alles.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Richten Sie automatisierte, tägliche Backups ein. Lokales Backup auf eine externe Festplatte oder ein NAS, plus eine Cloud-Kopie — zum Beispiel mit Veeam, Acronis oder dem integrierten Windows Server Backup. Testen Sie das Backup regelmäßig: Ein Backup, das sich nicht wiederherstellen lässt, ist kein Backup.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> Ein Steuerberater in der Metropolregion Hamburg verliert durch einen Ransomware-Angriff alle Mandantendaten der letzten fünf Jahre. Das letzte Backup ist drei Jahre alt und ebenfalls verschlüsselt. Ende der Geschichte.</p>
+
+      <h2>5. Mitarbeiter für Phishing sensibilisieren</h2>
+
+      <p><strong>Was es ist:</strong> Phishing bezeichnet gefälschte E-Mails, die aussehen wie legitime Nachrichten von Banken, Microsoft, der Post oder Kollegen — mit dem Ziel, Zugangsdaten zu stehlen oder Schadsoftware zu installieren.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> Technik kann vieles abfangen — aber nicht alles. Wenn ein Mitarbeiter auf einen Link klickt und seine Zugangsdaten eingibt, hilft die beste Firewall nichts. Der Mensch ist statistisch das schwächste Glied in der IT-Sicherheitskette.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Führen Sie eine kurze, jährliche Schulung durch. Zeigen Sie reale Phishing-Beispiele. Erklären Sie die drei wichtigsten Erkennungsmerkmale: unerwartete Dringlichkeit, ungewöhnliche Absenderadressen, Links zu fremden Domains. Anbieter wie KnowBe4 ermöglichen simulierte Phishing-Tests für das gesamte Team.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> Ein Mitarbeiter in der Buchhaltung klickt auf eine E-Mail, die angeblich von der Geschäftsführung kommt — mit der Bitte, dringend eine Überweisung durchzuführen. Ohne Schulung ist das schwer zu erkennen. Mit Schulung ist es offensichtlich.</p>
+
+      <h2>6. Firewall und Netzwerksegmentierung</h2>
+
+      <p><strong>Was es ist:</strong> Eine Firewall kontrolliert den Datenverkehr zwischen Ihrem Netzwerk und dem Internet. Netzwerksegmentierung bedeutet, dass verschiedene Bereiche Ihres Netzwerks voneinander getrennt sind — zum Beispiel Gäste-WLAN vom internen Firmennetzwerk.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> Ohne Firewall ist Ihr Netzwerk direkt dem Internet ausgesetzt. Ohne Segmentierung kann sich ein Angreifer, der einen Bereich kompromittiert hat, frei im gesamten Netzwerk bewegen.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Für kleine Unternehmen reicht zunächst ein professioneller Router mit integrierter Firewall — zum Beispiel eine Sophos XGS oder eine Fortinet FortiGate Einstiegslösung. Richten Sie ein separates WLAN für Gäste und Besucher ein. Ihr reguläres Firmennetzwerk sollte niemals direkt zugänglich sein.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> Ein Handwerksbetrieb betreibt sein Büro-Netzwerk und das WLAN für Kundenbesuche im gleichen Netz. Ein Besucher mit einem kompromittierten Gerät hat damit automatisch Zugang zu allen Geräten im Büro — inklusive NAS und Büro-PCs.</p>
+
+      <h2>7. Klare Zugriffsrechte und Nutzerkonten</h2>
+
+      <p><strong>Was es ist:</strong> Jeder Mitarbeiter hat nur Zugang zu den Daten und Systemen, die er für seine Arbeit tatsächlich braucht. Administratorrechte werden nur dort vergeben, wo sie wirklich notwendig sind.</p>
+
+      <p><strong>Warum es wichtig ist:</strong> Das Prinzip heißt "Least Privilege" — minimale Rechte. Wenn ein Mitarbeiterkonto kompromittiert wird, begrenzt das den Schaden auf den Bereich, auf den dieser Mitarbeiter Zugriff hatte. Ohne diese Trennung kann ein einziges kompromittiertes Konto das gesamte Unternehmen lahmlegen.</p>
+
+      <p><strong>Wie Sie es umsetzen:</strong> Überprüfen Sie, wer in Ihrem Unternehmen Administratorrechte hat — und ob das wirklich notwendig ist. Richten Sie für jeden Mitarbeiter ein eigenes Konto ein, keine geteilten Zugänge. Deaktivieren Sie Konten ausgeschiedener Mitarbeiter sofort am letzten Arbeitstag.</p>
+
+      <p><strong>Was passiert, wenn Sie es nicht tun:</strong> Ein ehemaliger Mitarbeiter hat noch aktiven Zugang zu Ihrem CRM und den Kundendaten — aus Vergessen, nicht aus böser Absicht. Bis das auffällt, können Monate vergehen. DSGVO-konform ist das nicht.</p>
+
+      <h2>Was LIGHT DM für Ihre IT-Sicherheit tut</h2>
+
+      <p>IT-Sicherheit für kleine Unternehmen ist kein einmaliges Projekt, sondern ein laufender Prozess. Die meisten KMU haben weder die Zeit noch das interne Know-how, um all das selbst zu überwachen, aktuell zu halten und im Ernstfall schnell zu reagieren.</p>
+
+      <p>Als Managed Service Provider aus der Metropolregion Hamburg betreuen wir kleine Unternehmen mit 5 bis 50 Mitarbeitern — persönlich, direkt und ohne Callcenter. Unsere IT-Security-Leistungen umfassen unter anderem:</p>
+
+      <ul>
+        <li>Zentral gesteuertes Patch-Management: alle Geräte immer auf aktuellem Stand</li>
+        <li>Backup-Monitoring und regelmäßige Wiederherstellungstests</li>
+        <li>Firewall-Einrichtung und -Verwaltung mit professionellen Business-Lösungen</li>
+        <li>Benutzer- und Rechteverwaltung über Microsoft 365 und Azure Active Directory</li>
+        <li>Phishing-Simulationen und Mitarbeitersensibilisierung</li>
+        <li>Sicherheits-Audits: wo steht Ihr Unternehmen gerade wirklich?</li>
+      </ul>
+
+      <p>Wir arbeiten mit festen Monatspauschalen — keine Überraschungsrechnungen, volle Planungssicherheit. Und wenn etwas brennt, sind wir erreichbar.</p>
+
+      <hr class="article-divider">
+
+      <div class="article-cta">
+        <h3>IT-Sicherheit professionell umsetzen?</h3>
+        <p>Wir analysieren Ihre aktuelle IT-Sicherheitslage und zeigen Ihnen genau, wo Handlungsbedarf besteht — ohne Fachchinesisch und ohne versteckte Kosten. Vereinbaren Sie ein kostenloses Erstgespräch.</p>
+        <a href="/leistungen/it-security/" class="btn-primary">IT-Security Leistungen ansehen</a>
+      </div>
+
+      <a href="/blog/" class="article-back">&#8592; Zurück zum Blog</a>
+
+    </div>
+  </div>
+</main>
+
+<footer class="ldm-footer" role="contentinfo">
+  <div class="ldm-footer-grid">
+    <div>
+      <div class="ldm-footer-logo"><img src="/images/logo-full-white.png" alt="LIGHT DM" style="height:1.8rem;width:auto;opacity:0.85"/></div>
+      <p class="ldm-footer-tagline">IT, KI &amp; Automatisierung | Metropolregion Hamburg.<br>Individuell. Direkt. Verlässlich.</p>
+      <p class="ldm-footer-location">Buxtehude, Metropolregion Hamburg</p>
+    </div>
+    <div class="ldm-footer-col">
+      <h4>Leistungen</h4>
+      <a href="/leistungen/it-infrastruktur/">IT-Infrastruktur</a>
+      <a href="/leistungen/it-security/">IT-Security</a>
+      <a href="/leistungen/server-cloud/">Server &amp; Cloud</a>
+      <a href="/leistungen/managed-support/">Managed Support</a>
+      <a href="/leistungen/ki-prozessoptimierung/">KI &amp; Automatisierung</a>
+      <a href="/leistungen/branding/">Branding &amp; Design</a>
+      <a href="/leistungen/webdesign/">Webdesign</a>
+    </div>
+    <div class="ldm-footer-col">
+      <h4>Unternehmen</h4>
+      <a href="/ueber-uns/">Über uns</a>
+      <a href="/projekte/">Projekte</a>
+      <a href="/blog/">Blog</a>
+      <a href="/kontakt/">Kontakt</a>
+    </div>
+    <div class="ldm-footer-col">
+      <h4>Kontakt</h4>
+      <a href="mailto:info@light-dm.de">info@light-dm.de</a>
+      <a href="tel:+494060778244">+49 40 60778244</a>
+      <a href="/kontakt/">Beratungsgespräch</a>
+    </div>
+  </div>
+  <div class="ldm-footer-bottom">
+    <span class="ldm-footer-copy">&#169; 2026 LIGHT DM</span>
+    <div class="ldm-footer-legal">
+      <a href="/impressum/">Impressum</a>
+      <a href="/datenschutz/">Datenschutz</a>
+    </div>
+  </div>
+</footer>
+
+<script src="https://ticket.light-dm.de/assets/chat/chat-no-jquery.min.js"></script>
+<script>(function(){
+  try { new ZammadChat({fontSize:'12px',chatId:1}); } catch(e) { return; }
+  var _pending=false;
+  function openChat(c){ c.classList.add('ldm-visible'); var h=c.querySelector('.js-chat-open'); if(h&&!c.classList.contains('zammad-chat-is-open'))setTimeout(function(){h.click();},50); }
+  function addBtn(){ if(document.getElementById('ldm-chat-btn'))return; var b=document.createElement('button'); b.id='ldm-chat-btn';b.setAttribute('aria-label','Chat'); b.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>'; document.body.appendChild(b); b.addEventListener('click',function(){ var c=document.querySelector('.zammad-chat'); if(!c){_pending=true;return;} if(c.classList.contains('ldm-visible')){c.classList.remove('ldm-visible');}else{openChat(c);} }); }
+  var poll=setInterval(function(){ var c=document.querySelector('.zammad-chat'); if(!c)return; clearInterval(poll); addBtn(); if(_pending){openChat(c);_pending=false;} },100);
+  setTimeout(function(){clearInterval(poll);addBtn();},10000);
+})();</script>
+<script>
+(function(){
+  var nav = document.querySelector('.ldm-nav');
+  if(nav) window.addEventListener('scroll', function(){ nav.classList.toggle('scrolled', window.scrollY > 36); }, {passive:true});
+  var trigger = document.querySelector('.ldm-nav-trigger');
+  var mega = document.getElementById('ldm-mega');
+  var navLi = trigger ? trigger.closest('li') : null;
+  if(trigger && mega){
+    var t;
+    function openM(){ clearTimeout(t); mega.classList.add('open'); trigger.setAttribute('aria-expanded','true'); }
+    function closeM(){ t = setTimeout(function(){ mega.classList.remove('open'); trigger.setAttribute('aria-expanded','false'); }, 120); }
+    navLi.addEventListener('mouseenter', openM); navLi.addEventListener('mouseleave', closeM);
+    mega.addEventListener('mouseenter', function(){ clearTimeout(t); }); mega.addEventListener('mouseleave', closeM);
+    trigger.addEventListener('click', function(){ mega.classList.toggle('open'); });
+  }
+  var btn = document.getElementById('ldm-mob-btn'), mob = document.getElementById('ldm-mobile'), cls = document.getElementById('ldm-mob-close');
+  if(btn && mob){ btn.addEventListener('click', function(){ mob.classList.add('open'); document.body.style.overflow='hidden'; }); }
+  if(cls) cls.addEventListener('click', function(){ mob.classList.remove('open'); document.body.style.overflow=''; });
+})();
+</script>
+<script src="/canvas.js"></script>
+</body>
+</html>
